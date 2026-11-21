@@ -1591,8 +1591,7 @@
             'LOCATION:KPS Resort, Mangari, Babatpur, Varanasi, Uttar Pradesh',
             'END:VEVENT',
             'END:VCALENDAR'
-          ].join('
-');
+          ].join('\r\n');
 
           const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
           const url = URL.createObjectURL(blob);
