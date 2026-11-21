@@ -58,10 +58,11 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .hindi-text {
+    .hindi-text,
+    body.lang-hi [data-i18n] {
       font-family: 'Noto Serif Devanagari', serif;
       letter-spacing: normal !important;
-      word-spacing: 0.14em;
+      word-spacing: 0.12em;
     }
 
     /* Rich Velvet Wine Crimson & Banarasi Brocade Silk Weave Backdrop */
@@ -134,7 +135,6 @@
       pointer-events: none;
     }
 
-    /* Outer Sandstone & 24K Gold Jharokha Toran Arch Header */
     #gate-jharokha-toran {
       position: absolute;
       top: 0;
@@ -186,7 +186,6 @@
       transform: translateX(102%);
     }
 
-    /* Deep Carved Wooden Relief & Brass Frame */
     .door-carved-panel {
       flex: 1;
       border: 2px solid rgba(230, 198, 122, 0.8);
@@ -223,7 +222,6 @@
       justify-content: center;
     }
 
-    /* Embossed Brass Dome Studs (Kheel) */
     .brass-stud-row {
       display: flex;
       justify-content: space-between;
@@ -240,7 +238,6 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.85);
     }
 
-    /* Hammered Brass Lotus Door Knocker (Kunda) */
     .kunda-knocker {
       position: relative;
       width: 44px;
@@ -273,7 +270,6 @@
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.85), inset 0 1px 2px #FFF7D6;
     }
 
-    /* Central Brass Latch Bar */
     .center-brass-latch {
       position: absolute;
       top: 50%;
@@ -403,7 +399,6 @@
         inset 0 0 0 5.5px rgba(212, 175, 55, 0.85);
     }
 
-    /* Distinct Refined Arch Silhouettes per Card */
     .arch-shahjahani {
       border-top-left-radius: 155px 104px;
       border-top-right-radius: 155px 104px;
@@ -439,7 +434,6 @@
       border-top-right-radius: 130px 90px;
     }
 
-    /* Fine Gold Hairline Divider */
     .gold-hairline-divider {
       display: flex;
       align-items: center;
@@ -462,7 +456,6 @@
       transform: rotate(45deg);
     }
 
-    /* 24K Zari Gold Foil Typography Effect */
     .zari-foil-text {
       background: linear-gradient(135deg, #8B631E 0%, #C99E44 35%, #E6C67A 52%, #9C7428 75%, #C99E44 100%);
       -webkit-background-clip: text;
@@ -470,7 +463,6 @@
       filter: drop-shadow(0 1px 0 rgba(255, 252, 244, 0.85));
     }
 
-    /* Scroll Choreography & 3D Unfolding Animations */
     .reveal-on-scroll {
       opacity: 0;
       transform: translateY(30px) rotateX(5deg) scale(0.975);
@@ -517,8 +509,17 @@
     <div id="scroll-thread-bar"></div>
   </div>
 
-  <!-- Floating Top Control: Music Toggle -->
-  <div class="fixed top-3 right-3 z-50 flex items-center">
+  <!-- Floating Top Controls: Language Switcher (EN / हिन्दी) & Music Toggle -->
+  <div class="fixed top-3 right-3 z-50 flex items-center gap-2">
+    <button
+      id="lang-toggle-btn"
+      type="button"
+      aria-label="Switch Language between English and Hindi"
+      class="flex items-center gap-1 rounded-full bg-royal-burgundy/90 hover:bg-royal-crimson text-gold-light border border-gold-champagne px-3 py-2 text-[11px] font-semibold tracking-wider shadow-lg backdrop-blur-md cursor-pointer transition active:scale-95"
+    >
+      <span id="lang-label" class="hindi-text">हिन्दी</span>
+    </button>
+
     <button
       id="music-toggle-btn"
       type="button"
@@ -537,7 +538,6 @@
        1. RAJASTHAN / JAIPUR ROYAL PALACE GATE (POL) OPENING INTRO
   ========================================================== -->
   <div id="palace-gate-overlay" role="button" tabindex="0" aria-label="Tap to Open Royal Wedding Invitation">
-    <!-- Outer Sandstone & 24K Gold Jharokha Arch Header (Toran) -->
     <div id="gate-jharokha-toran">
       <svg class="w-full h-24 sm:h-28 drop-shadow-[0_10px_20px_rgba(0,0,0,0.9)]" viewBox="0 0 440 110" preserveAspectRatio="none">
         <defs>
@@ -679,14 +679,14 @@
         ॥ शुभ विवाह ॥
       </span>
       <span class="text-gold-champagne text-base my-0.5 leading-none">卐</span>
-      <span class="font-cinzel text-xs font-extrabold text-gold-champagne tracking-[0.28em] uppercase">
+      <span data-i18n="gateMonogram" class="font-cinzel text-xs font-extrabold text-gold-champagne tracking-[0.28em] uppercase">
         K &amp; S
       </span>
-      <span class="font-cinzel text-lg sm:text-xl font-bold text-gold-light tracking-[0.12em] uppercase mt-1 leading-tight">
+      <span data-i18n="gateCouple" class="font-cinzel text-lg sm:text-xl font-bold text-gold-light tracking-[0.12em] uppercase mt-1 leading-tight">
         Kajal &amp; Siddhant
       </span>
       <span class="w-20 h-px bg-gradient-to-r from-transparent via-gold-light to-transparent my-2"></span>
-      <span class="rounded-full bg-gradient-to-r from-gold-light via-silk-ivory to-gold-light text-royal-burgundy border border-gold-antique font-cinzel text-[10px] font-extrabold uppercase tracking-[0.2em] px-4 py-1.5 shadow-md">
+      <span data-i18n="tapToOpen" class="rounded-full bg-gradient-to-r from-gold-light via-silk-ivory to-gold-light text-royal-burgundy border border-gold-antique font-cinzel text-[10px] font-extrabold uppercase tracking-[0.2em] px-4 py-1.5 shadow-md">
         Tap to Open
       </span>
     </button>
@@ -715,7 +715,6 @@
         <rect width="100%" height="100%" fill="url(#jali-hero)" />
       </svg>
 
-      <!-- Fine Gold-Foil Paisley Corner Filigree -->
       <svg class="pointer-events-none absolute top-2.5 left-2.5 w-8 h-8 text-gold-light/85" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
         <path d="M3 20 C3 9 9 3 20 3 M3 13 C3 7 7 3 13 3" />
         <circle cx="6" cy="6" r="1.5" fill="currentColor" />
@@ -726,7 +725,7 @@
       </svg>
 
       <div class="alabaster-arch-panel arch-shahjahani relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
-        <!-- Sacred Ganesh Invocation -->
+        <!-- Sacred Ganesh Invocation (Stays untouched in Sanskrit/Hindi) -->
         <div class="stagger-item stagger-1 mx-auto mb-2 flex flex-col items-center">
           <p class="hindi-text text-royal-crimson font-bold text-base">
             ॐ श्री गणेशाय नमः
@@ -746,35 +745,35 @@
           <span class="line"></span>
         </div>
 
-        <p class="stagger-item stagger-2 font-serif italic text-base text-royal-burgundy/90 leading-snug">
+        <p data-i18n="togetherWithFamilies" class="stagger-item stagger-2 font-serif italic text-base text-royal-burgundy/90 leading-snug">
           Together with their families
         </p>
 
         <!-- Couple Names -->
         <div class="stagger-item stagger-3 my-3.5">
-          <h1 class="font-cinzel text-3xl font-bold text-royal-crimson tracking-[0.14em] uppercase">
+          <h1 data-i18n="brideName" class="font-cinzel text-3xl font-bold text-royal-crimson tracking-[0.14em] uppercase">
             Kajal
           </h1>
           <div class="flex items-center justify-center gap-3 my-1">
             <span class="h-px w-10 bg-gradient-to-r from-transparent to-gold-antique"></span>
-            <span class="zari-foil-text font-serif italic text-2xl font-bold">&amp;</span>
+            <span data-i18n="amp" class="zari-foil-text font-serif italic text-2xl font-bold">&amp;</span>
             <span class="h-px w-10 bg-gradient-to-l from-transparent to-gold-antique"></span>
           </div>
-          <h1 class="font-cinzel text-3xl font-bold text-royal-crimson tracking-[0.14em] uppercase">
+          <h1 data-i18n="groomName" class="font-cinzel text-3xl font-bold text-royal-crimson tracking-[0.14em] uppercase">
             Siddhant
           </h1>
         </div>
 
-        <p class="stagger-item stagger-3 font-serif italic text-base text-royal-burgundy leading-relaxed px-2">
+        <p data-i18n="requestHonour" class="stagger-item stagger-3 font-serif italic text-base text-royal-burgundy leading-relaxed px-2">
           Request the honour of your presence at their Wedding Celebrations
         </p>
 
         <!-- Wedding Date & Main Venue Pill -->
         <div class="stagger-item stagger-4 mx-auto mt-4 rounded-2xl bg-gradient-to-r from-royal-burgundy via-royal-red to-royal-burgundy border border-gold-champagne px-4 py-3 text-silk-ivory shadow-md">
-          <p class="font-cinzel text-xs font-semibold text-gold-light tracking-[0.12em] uppercase">
+          <p data-i18n="mainDate" class="font-cinzel text-xs font-semibold text-gold-light tracking-[0.12em] uppercase">
             12th December 2026
           </p>
-          <p class="font-serif italic text-base text-silk-cream mt-0.5">
+          <p data-i18n="mainCity" class="font-serif italic text-base text-silk-cream mt-0.5">
             Varanasi, Uttar Pradesh
           </p>
         </div>
@@ -783,19 +782,19 @@
         <div class="stagger-item stagger-5 mt-4 grid grid-cols-4 gap-1.5 mx-auto">
           <div class="rounded-xl bg-royal-red/[0.05] border border-gold-antique/60 py-2 px-1">
             <span id="cd-days" class="block font-cinzel text-base font-bold text-royal-crimson">00</span>
-            <span class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Days</span>
+            <span data-i18n="cdDays" class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Days</span>
           </div>
           <div class="rounded-xl bg-royal-red/[0.05] border border-gold-antique/60 py-2 px-1">
             <span id="cd-hours" class="block font-cinzel text-base font-bold text-royal-crimson">00</span>
-            <span class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Hours</span>
+            <span data-i18n="cdHours" class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Hours</span>
           </div>
           <div class="rounded-xl bg-royal-red/[0.05] border border-gold-antique/60 py-2 px-1">
             <span id="cd-mins" class="block font-cinzel text-base font-bold text-royal-crimson">00</span>
-            <span class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Mins</span>
+            <span data-i18n="cdMins" class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Mins</span>
           </div>
           <div class="rounded-xl bg-royal-red/[0.05] border border-gold-antique/60 py-2 px-1">
             <span id="cd-secs" class="block font-cinzel text-base font-bold text-royal-crimson">00</span>
-            <span class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Secs</span>
+            <span data-i18n="cdSecs" class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Secs</span>
           </div>
         </div>
       </div>
@@ -826,34 +825,34 @@
           <span class="line"></span>
         </div>
 
-        <p class="stagger-item stagger-2 font-serif italic text-base text-royal-burgundy leading-relaxed">
+        <p data-i18n="divineBlessings" class="stagger-item stagger-2 font-serif italic text-base text-royal-burgundy leading-relaxed">
           With the divine blessings of the Almighty, the families of
         </p>
 
         <!-- Bride's Parents Block -->
         <div class="stagger-item stagger-3 my-4 py-3.5 px-4 rounded-2xl bg-royal-red/[0.04] border border-gold-antique/55">
-          <h3 class="font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.12em] uppercase">
+          <h3 data-i18n="brideName" class="font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.12em] uppercase">
             Kajal
           </h3>
-          <p class="font-serif italic text-sm text-royal-red mt-0.5">Beloved Daughter of</p>
-          <p class="font-serif font-bold text-lg text-royal-burgundy mt-0.5">
+          <p data-i18n="daughterOf" class="font-serif italic text-sm text-royal-red mt-0.5">Beloved Daughter of</p>
+          <p data-i18n="brideParents" class="font-serif font-bold text-lg text-royal-burgundy mt-0.5">
             Smt. Mithilesh &amp; Shree Santosh Singh
           </p>
         </div>
 
         <div class="flex items-center justify-center gap-2.5 my-1">
           <span class="h-px w-10 bg-gold-antique/65"></span>
-          <span class="text-[10px] uppercase tracking-[0.28em] text-gold-deep font-bold">With</span>
+          <span data-i18n="withWord" class="text-[10px] uppercase tracking-[0.28em] text-gold-deep font-bold">With</span>
           <span class="h-px w-10 bg-gold-antique/65"></span>
         </div>
 
         <!-- Groom's Parents Block -->
         <div class="stagger-item stagger-4 mt-4 py-3.5 px-4 rounded-2xl bg-royal-red/[0.04] border border-gold-antique/55">
-          <h3 class="font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.12em] uppercase">
+          <h3 data-i18n="groomName" class="font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.12em] uppercase">
             Siddhant
           </h3>
-          <p class="font-serif italic text-sm text-royal-red mt-0.5">Beloved Son of</p>
-          <p class="font-serif font-bold text-lg text-royal-burgundy mt-0.5">
+          <p data-i18n="sonOf" class="font-serif italic text-sm text-royal-red mt-0.5">Beloved Son of</p>
+          <p data-i18n="groomParents" class="font-serif font-bold text-lg text-royal-burgundy mt-0.5">
             Smt. Suman &amp; Shree Uttam Singh
           </p>
         </div>
@@ -868,7 +867,7 @@
         <p class="hindi-text text-gold-light text-sm font-medium">
           ॥ मांगलिक कार्यक्रम • काशी ॥
         </p>
-        <h2 class="font-cinzel text-2xl font-semibold text-gold-light tracking-[0.12em] uppercase mt-1">
+        <h2 data-i18n="ceremoniesHeading" class="font-cinzel text-2xl font-semibold text-gold-light tracking-[0.12em] uppercase mt-1">
           Wedding Ceremonies
         </h2>
         <div class="w-24 h-px bg-gradient-to-r from-transparent via-gold-champagne to-transparent mx-auto mt-2.5"></div>
@@ -887,16 +886,16 @@
         </svg>
 
         <div class="alabaster-arch-panel arch-temple-toran relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
-          <span class="stagger-item stagger-1 inline-block rounded-full bg-royal-crimson text-gold-light text-[9px] font-semibold uppercase tracking-[0.22em] px-4 py-1 mb-3">
+          <span data-i18n="tilakBadge" class="stagger-item stagger-1 inline-block rounded-full bg-royal-crimson text-gold-light text-[9px] font-semibold uppercase tracking-[0.22em] px-4 py-1 mb-3">
             Shagun &amp; Ring Exchange
           </span>
-          <h3 class="stagger-item stagger-2 font-cinzel text-xl font-bold text-royal-burgundy tracking-[0.08em]">
+          <h3 data-i18n="tilakTitle" class="stagger-item stagger-2 font-cinzel text-xl font-bold text-royal-burgundy tracking-[0.08em]">
             Tilak &amp; Ring Ceremony
           </h3>
-          <p class="stagger-item stagger-3 font-serif text-lg font-bold text-royal-crimson mt-1.5">
+          <p data-i18n="tilakDate" class="stagger-item stagger-3 font-serif text-lg font-bold text-royal-crimson mt-1.5">
             5th December 2026
           </p>
-          <p class="stagger-item stagger-3 text-[11px] uppercase tracking-[0.16em] font-semibold text-gold-deep mt-1">
+          <p data-i18n="tilakTime" class="stagger-item stagger-3 text-[11px] uppercase tracking-[0.16em] font-semibold text-gold-deep mt-1">
             5:00 PM Onwards
           </p>
 
@@ -906,10 +905,10 @@
             <span class="line"></span>
           </div>
 
-          <p class="stagger-item stagger-4 font-serif text-lg text-royal-burgundy font-bold">
+          <p data-i18n="tilakVenue" class="stagger-item stagger-4 font-serif text-lg text-royal-burgundy font-bold">
             Sanzha Chulha
           </p>
-          <p class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
+          <p data-i18n="mainCity" class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
             Varanasi, Uttar Pradesh
           </p>
           <div class="stagger-item stagger-5 mt-5">
@@ -919,7 +918,7 @@
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center rounded-full bg-royal-crimson hover:bg-royal-red active:scale-95 text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] shadow transition"
             >
-              <span>View on Google Maps</span>
+              <span data-i18n="viewMaps">View on Google Maps</span>
             </a>
           </div>
         </div>
@@ -938,18 +937,18 @@
         </svg>
 
         <div class="alabaster-arch-panel arch-mandap-scallop relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
-          <span class="stagger-item stagger-1 inline-block rounded-full bg-marigold-rich text-silk-ivory text-[9px] font-semibold uppercase tracking-[0.22em] px-4 py-1 mb-3">
+          <span data-i18n="haldiBadge" class="stagger-item stagger-1 inline-block rounded-full bg-marigold-rich text-silk-ivory text-[9px] font-semibold uppercase tracking-[0.22em] px-4 py-1 mb-3">
             Colors of Joy &amp; Henna
           </span>
-          <h3 class="stagger-item stagger-2 font-cinzel text-xl font-bold text-royal-burgundy tracking-[0.08em]">
+          <h3 data-i18n="haldiTitle" class="stagger-item stagger-2 font-cinzel text-xl font-bold text-royal-burgundy tracking-[0.08em]">
             Haldi &amp; Mehendi
           </h3>
-          <p class="stagger-item stagger-3 font-serif text-lg font-bold text-royal-crimson mt-1.5">
+          <p data-i18n="haldiDate" class="stagger-item stagger-3 font-serif text-lg font-bold text-royal-crimson mt-1.5">
             10th December 2026
           </p>
           <div class="stagger-item stagger-3 mt-1.5 space-y-0.5 text-[11px] uppercase tracking-[0.14em] font-semibold text-gold-deep">
-            <p>Haldi Ceremony: 10:00 AM</p>
-            <p>Mehendi Night: 6:00 PM</p>
+            <p data-i18n="haldiTime1">Haldi Ceremony: 10:00 AM</p>
+            <p data-i18n="haldiTime2">Mehendi Night: 6:00 PM</p>
           </div>
 
           <div class="gold-hairline-divider stagger-item stagger-4">
@@ -958,10 +957,10 @@
             <span class="line"></span>
           </div>
 
-          <p class="stagger-item stagger-4 font-serif text-lg text-royal-burgundy font-bold">
+          <p data-i18n="ancestralVenue" class="stagger-item stagger-4 font-serif text-lg text-royal-burgundy font-bold">
             Ancestral House, Kumbhapur
           </p>
-          <p class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
+          <p data-i18n="ancestralCity" class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
             Kundi, Varanasi, Uttar Pradesh
           </p>
           <div class="stagger-item stagger-5 mt-5">
@@ -971,7 +970,7 @@
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center rounded-full bg-royal-crimson hover:bg-royal-red active:scale-95 text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] shadow transition"
             >
-              <span>View on Google Maps</span>
+              <span data-i18n="viewMaps">View on Google Maps</span>
             </a>
           </div>
         </div>
@@ -990,18 +989,18 @@
         </svg>
 
         <div class="alabaster-arch-panel arch-doli-pavilion relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
-          <span class="stagger-item stagger-1 inline-block rounded-full bg-gradient-to-r from-royal-burgundy via-royal-crimson to-royal-burgundy text-gold-light border border-gold-champagne text-[9px] font-semibold uppercase tracking-[0.18em] px-4 py-1 mb-3 shadow">
+          <span data-i18n="vivahBadge" class="stagger-item stagger-1 inline-block rounded-full bg-gradient-to-r from-royal-burgundy via-royal-crimson to-royal-burgundy text-gold-light border border-gold-champagne text-[9px] font-semibold uppercase tracking-[0.18em] px-4 py-1 mb-3 shadow">
             Sacred Union • Panigrahan
           </span>
-          <h3 class="stagger-item stagger-2 font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.1em]">
+          <h3 data-i18n="vivahTitle" class="stagger-item stagger-2 font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.1em]">
             Shubh Vivah
           </h3>
-          <p class="stagger-item stagger-3 font-serif text-xl font-bold text-royal-burgundy mt-1.5">
+          <p data-i18n="mainDate" class="stagger-item stagger-3 font-serif text-xl font-bold text-royal-burgundy mt-1.5">
             12th December 2026
           </p>
           <div class="stagger-item stagger-3 mt-1.5 space-y-0.5 text-[11px] uppercase tracking-[0.14em] font-semibold text-gold-deep">
-            <p>Baraat Swagat: 7:00 PM</p>
-            <p>Vivah Sanskar: Auspicious Night</p>
+            <p data-i18n="vivahTime1">Baraat Swagat: 7:00 PM</p>
+            <p data-i18n="vivahTime2">Vivah Sanskar: Auspicious Night</p>
           </div>
 
           <div class="gold-hairline-divider stagger-item stagger-4">
@@ -1010,10 +1009,10 @@
             <span class="line"></span>
           </div>
 
-          <p class="stagger-item stagger-4 font-serif text-xl text-royal-burgundy font-bold">
+          <p data-i18n="kpsVenue" class="stagger-item stagger-4 font-serif text-xl text-royal-burgundy font-bold">
             KPS Resort
           </p>
-          <p class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
+          <p data-i18n="kpsCity" class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
             Mangari, Babatpur, Varanasi, Uttar Pradesh
           </p>
           <div class="stagger-item stagger-5 mt-5">
@@ -1023,7 +1022,7 @@
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-royal-burgundy via-royal-crimson to-royal-burgundy text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] shadow-md active:scale-95 transition"
             >
-              <span>View on Google Maps</span>
+              <span data-i18n="viewMaps">View on Google Maps</span>
             </a>
           </div>
         </div>
@@ -1041,16 +1040,16 @@
         </svg>
 
         <div class="alabaster-arch-panel arch-sunset-mehrab relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
-          <span class="stagger-item stagger-1 inline-block rounded-full bg-royal-burgundy text-gold-light text-[9px] font-semibold uppercase tracking-[0.22em] px-4 py-1 mb-3">
+          <span data-i18n="vidayiBadge" class="stagger-item stagger-1 inline-block rounded-full bg-royal-burgundy text-gold-light text-[9px] font-semibold uppercase tracking-[0.22em] px-4 py-1 mb-3">
             Blessings &amp; Farewell
           </span>
-          <h3 class="stagger-item stagger-2 font-cinzel text-xl font-bold text-royal-burgundy tracking-[0.08em]">
+          <h3 data-i18n="vidayiTitle" class="stagger-item stagger-2 font-cinzel text-xl font-bold text-royal-burgundy tracking-[0.08em]">
             Vidayi Ceremony
           </h3>
-          <p class="stagger-item stagger-3 font-serif text-lg font-bold text-royal-crimson mt-1.5">
+          <p data-i18n="vidayiDate" class="stagger-item stagger-3 font-serif text-lg font-bold text-royal-crimson mt-1.5">
             14th December 2026
           </p>
-          <p class="stagger-item stagger-3 text-[11px] uppercase tracking-[0.16em] font-semibold text-gold-deep mt-1">
+          <p data-i18n="vidayiTime" class="stagger-item stagger-3 text-[11px] uppercase tracking-[0.16em] font-semibold text-gold-deep mt-1">
             Morning
           </p>
 
@@ -1060,10 +1059,10 @@
             <span class="line"></span>
           </div>
 
-          <p class="stagger-item stagger-4 font-serif text-lg text-royal-burgundy font-bold">
+          <p data-i18n="ancestralVenue" class="stagger-item stagger-4 font-serif text-lg text-royal-burgundy font-bold">
             Ancestral House, Kumbhapur
           </p>
-          <p class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
+          <p data-i18n="ancestralCity" class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
             Kundi, Varanasi, Uttar Pradesh
           </p>
           <div class="stagger-item stagger-5 mt-5">
@@ -1073,7 +1072,7 @@
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center rounded-full bg-royal-crimson hover:bg-royal-red active:scale-95 text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] shadow transition"
             >
-              <span>View on Google Maps</span>
+              <span data-i18n="viewMaps">View on Google Maps</span>
             </a>
           </div>
         </div>
@@ -1097,7 +1096,7 @@
         <p class="stagger-item stagger-1 hindi-text text-royal-crimson font-bold text-sm mb-1.5">
           ॥ स्नेह एवं आशीर्वाद ॥
         </p>
-        <h2 class="stagger-item stagger-2 font-cinzel text-sm font-bold text-royal-burgundy tracking-[0.14em] uppercase">
+        <h2 data-i18n="complimentsHeading" class="stagger-item stagger-2 font-cinzel text-sm font-bold text-royal-burgundy tracking-[0.14em] uppercase">
           With Best Compliments &amp; Blessings From
         </h2>
 
@@ -1107,14 +1106,14 @@
           <span class="line"></span>
         </div>
 
-        <p class="stagger-item stagger-3 font-serif text-xl font-bold text-royal-crimson leading-snug">
+        <p data-i18n="eldersNames" class="stagger-item stagger-3 font-serif text-xl font-bold text-royal-crimson leading-snug">
           Grandfather Shree Mangala Prasad Singh &amp; Grandmother Smt. Jadavati Devi
         </p>
-        <p class="stagger-item stagger-4 font-serif italic text-base text-royal-burgundy/90 mt-1.5">
+        <p data-i18n="singhFamily" class="stagger-item stagger-4 font-serif italic text-base text-royal-burgundy/90 mt-1.5">
           And Entire Singh Family • Varanasi
         </p>
 
-        <p class="stagger-item stagger-4 font-serif italic text-base text-royal-burgundy mt-3.5 leading-relaxed">
+        <p data-i18n="closingQuote" class="stagger-item stagger-4 font-serif italic text-base text-royal-burgundy mt-3.5 leading-relaxed">
           “Your presence and heartfelt blessings will make our sacred union truly unforgettable.”
         </p>
 
@@ -1125,7 +1124,7 @@
             type="button"
             class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-silk-ivory hover:bg-silk-cream active:scale-95 text-royal-burgundy border border-gold-antique px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] shadow-sm transition cursor-pointer"
           >
-            <span>Add to Calendar</span>
+            <span data-i18n="addToCalendar">Add to Calendar</span>
           </button>
           <a
             href="https://wa.me/?text=%E0%A5%90%20%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%97%E0%A4%A3%E0%A5%87%E0%A4%B6%E0%A4%BE%E0%A4%AF%20%E0%A4%A8%E0%A4%AE%E0%A4%83%20%E2%80%94%20You%20are%20cordially%20invited%20to%20the%20Royal%20Wedding%20of%20Kajal%20%26%20Siddhant%20on%2012th%20December%202026%20at%20KPS%20Resort%2C%20Mangari%2C%20Babatpur%2C%20Varanasi."
@@ -1133,7 +1132,7 @@
             rel="noopener noreferrer"
             class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-royal-crimson hover:bg-royal-red active:scale-95 text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] shadow-md transition"
           >
-            <span>Share on WhatsApp</span>
+            <span data-i18n="shareWhatsApp">Share on WhatsApp</span>
           </a>
         </div>
       </div>
@@ -1142,273 +1141,198 @@
   </main>
 
   <!-- =========================================================
-       3. INTERACTIVE ENGINE (PALACE GATE, CONTINUOUS PETALS, MP3)
+       3. INTERACTIVE ENGINE (LANGUAGE TOGGLE, GATE, PETALS, MP3)
   ========================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // =========================================================
-      // CUSTOM MP3 AUDIO CONTROLLER (+ EMERGENCY SYNTH BACKUP)
+      // ENGLISH <-> HINDI TRANSLATION ENGINE (ONLY ENGLISH SECTIONS)
       // =========================================================
-      let audioCtx = null;
-      let isPlaying = false;
-      let musicSchedulerTimer = null;
-      let droneNodes = null;
-      let melodyStep = 0;
+      let currentLang = 'en';
 
+      const translations = {
+        en: {
+          gateMonogram: 'K & S',
+          gateCouple: 'Kajal & Siddhant',
+          tapToOpen: 'Tap to Open',
+          togetherWithFamilies: 'Together with their families',
+          brideName: 'Kajal',
+          amp: '&',
+          groomName: 'Siddhant',
+          requestHonour: 'Request the honour of your presence at their Wedding Celebrations',
+          mainDate: '12th December 2026',
+          mainCity: 'Varanasi, Uttar Pradesh',
+          cdDays: 'Days',
+          cdHours: 'Hours',
+          cdMins: 'Mins',
+          cdSecs: 'Secs',
+          divineBlessings: 'With the divine blessings of the Almighty, the families of',
+          daughterOf: 'Beloved Daughter of',
+          brideParents: 'Smt. Mithilesh & Shree Santosh Singh',
+          withWord: 'With',
+          sonOf: 'Beloved Son of',
+          groomParents: 'Smt. Suman & Shree Uttam Singh',
+          ceremoniesHeading: 'Wedding Ceremonies',
+          tilakBadge: 'Shagun & Ring Exchange',
+          tilakTitle: 'Tilak & Ring Ceremony',
+          tilakDate: '5th December 2026',
+          tilakTime: '5:00 PM Onwards',
+          tilakVenue: 'Sanzha Chulha',
+          haldiBadge: 'Colors of Joy & Henna',
+          haldiTitle: 'Haldi & Mehendi',
+          haldiDate: '10th December 2026',
+          haldiTime1: 'Haldi Ceremony: 10:00 AM',
+          haldiTime2: 'Mehendi Night: 6:00 PM',
+          ancestralVenue: 'Ancestral House, Kumbhapur',
+          ancestralCity: 'Kundi, Varanasi, Uttar Pradesh',
+          vivahBadge: 'Sacred Union • Panigrahan',
+          vivahTitle: 'Shubh Vivah',
+          vivahTime1: 'Baraat Swagat: 7:00 PM',
+          vivahTime2: 'Vivah Sanskar: Auspicious Night',
+          kpsVenue: 'KPS Resort',
+          kpsCity: 'Mangari, Babatpur, Varanasi, Uttar Pradesh',
+          vidayiBadge: 'Blessings & Farewell',
+          vidayiTitle: 'Vidayi Ceremony',
+          vidayiDate: '14th December 2026',
+          vidayiTime: 'Morning',
+          viewMaps: 'View on Google Maps',
+          complimentsHeading: 'With Best Compliments & Blessings From',
+          eldersNames: 'Grandfather Shree Mangala Prasad Singh & Grandmother Smt. Jadavati Devi',
+          singhFamily: 'And Entire Singh Family • Varanasi',
+          closingQuote: '“Your presence and heartfelt blessings will make our sacred union truly unforgettable.”',
+          addToCalendar: 'Add to Calendar',
+          shareWhatsApp: 'Share on WhatsApp'
+        },
+        hi: {
+          gateMonogram: 'का • सि',
+          gateCouple: 'काजल एवं सिद्धांत',
+          tapToOpen: 'निमंत्रण खोलें',
+          togetherWithFamilies: 'दोनों परिवारों के सस्नेह निमंत्रण सहित',
+          brideName: 'काजल',
+          amp: 'संग',
+          groomName: 'सिद्धांत',
+          requestHonour: 'के पावन विवाह समारोह में आपकी गरिमामयी उपस्थिति सादर प्रार्थनीय है',
+          mainDate: '12 दिसम्बर 2026',
+          mainCity: 'वाराणसी, उत्तर प्रदेश',
+          cdDays: 'दिन',
+          cdHours: 'घंटे',
+          cdMins: 'मिनट',
+          cdSecs: 'सेकंड',
+          divineBlessings: 'परमपिता परमेश्वर की असीम अनुकम्पा से',
+          daughterOf: 'सुपुत्री',
+          brideParents: 'श्रीमती मिथिलेश एवं श्री संतोष सिंह',
+          withWord: 'परिणय सूत्र',
+          sonOf: 'सुपुत्र',
+          groomParents: 'श्रीमती सुमन एवं श्री उत्तम सिंह',
+          ceremoniesHeading: 'विवाह समारोह',
+          tilakBadge: 'शगुन एवं सगाई',
+          tilakTitle: 'तिलक एवं सगाई समारोह',
+          tilakDate: '5 दिसम्बर 2026',
+          tilakTime: 'सायं 5:00 बजे से',
+          tilakVenue: 'सांझा चूल्हा',
+          haldiBadge: 'हल्दी एवं मेहंदी उत्सव',
+          haldiTitle: 'हल्दी एवं मेहंदी',
+          haldiDate: '10 दिसम्बर 2026',
+          haldiTime1: 'हल्दी समारोह: प्रातः 10:00 बजे',
+          haldiTime2: 'मेहंदी संध्या: सायं 6:00 बजे',
+          ancestralVenue: 'पैतृक निवास, कुम्भापुर',
+          ancestralCity: 'कुंडी, वाराणसी, उत्तर प्रदेश',
+          vivahBadge: 'पावन परिणय • पाणिग्रहण',
+          vivahTitle: 'शुभ विवाह',
+          vivahTime1: 'बारात स्वागत: रात्रि 7:00 बजे',
+          vivahTime2: 'विवाह संस्कार: शुभ रात्रि बेला',
+          kpsVenue: 'के.पी.एस. रिसॉर्ट (KPS Resort)',
+          kpsCity: 'मंगारी, बाबतपुर, वाराणसी, उत्तर प्रदेश',
+          vidayiBadge: 'आशीर्वाद एवं विदाई',
+          vidayiTitle: 'विदाई समारोह',
+          vidayiDate: '14 दिसम्बर 2026',
+          vidayiTime: 'प्रातः काल',
+          viewMaps: 'गूगल मैप पर देखें',
+          complimentsHeading: 'दर्शनाभिलाषी एवं आशीर्वाद',
+          eldersNames: 'दादाजी श्री मंगला प्रसाद सिंह एवं दादीजी श्रीमती जादवती देवी',
+          singhFamily: 'एवं समस्त सिंह परिवार • वाराणसी',
+          closingQuote: '“आपकी स्नेहिल उपस्थिति एवं हार्दिक आशीर्वाद हमारे इस पावन परिणय को अविस्मरणीय बनाएगा।”',
+          addToCalendar: 'कैलेंडर में जोड़ें',
+          shareWhatsApp: 'व्हाट्सएप पर साझा करें'
+        }
+      };
+
+      const langToggleBtn = document.getElementById('lang-toggle-btn');
+      const langLabel = document.getElementById('lang-label');
+
+      function applyLanguage(lang) {
+        currentLang = lang;
+        document.body.classList.toggle('lang-hi', lang === 'hi');
+        document.documentElement.lang = lang;
+
+        const dict = translations[lang];
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          if (dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+
+        langLabel.textContent = lang === 'en' ? 'हिन्दी' : 'English';
+        langLabel.classList.toggle('hindi-text', lang === 'en');
+        updateMusicLabel();
+      }
+
+      langToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        applyLanguage(currentLang === 'en' ? 'hi' : 'en');
+      });
+
+      // =========================================================
+      // CUSTOM WEDDING SONG PLAYER (wedding-song.mp3)
+      // =========================================================
+      let isPlaying = false;
       const bgMusic = document.getElementById('bg-music');
       const musicBtn = document.getElementById('music-toggle-btn');
       const musicIcon = document.getElementById('music-icon');
       const musicLabel = document.getElementById('music-label');
 
-      const weddingPhrases = [
-        { flute: 440.00, sitar: 293.66, chord: [293.66, 369.99, 440.00] },
-        { flute: 493.88, sitar: 369.99, chord: null },
-        { flute: 554.37, sitar: 440.00, chord: null },
-        { flute: 587.33, sitar: 554.37, chord: [329.63, 415.30, 493.88] },
-        { flute: 554.37, sitar: 440.00, chord: null },
-        { flute: 493.88, sitar: 369.99, chord: null },
-        { flute: 440.00, sitar: 587.33, chord: [293.66, 369.99, 440.00] },
-        { flute: 415.30, sitar: 493.88, chord: null },
-        { flute: 369.99, sitar: 440.00, chord: null },
-        { flute: 329.63, sitar: 369.99, chord: [246.94, 293.66, 369.99] },
-        { flute: 369.99, sitar: 329.63, chord: null },
-        { flute: 293.66, sitar: 293.66, chord: null }
-      ];
-
-      function ensureAudioContext() {
-        if (!audioCtx) {
-          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-          if (!AudioContextClass) return null;
-          audioCtx = new AudioContextClass();
+      function updateMusicLabel() {
+        if (currentLang === 'hi') {
+          musicLabel.textContent = isPlaying ? 'संगीत चालू' : 'संगीत बंद';
+        } else {
+          musicLabel.textContent = isPlaying ? 'Music On' : 'Music Off';
         }
-        if (audioCtx.state === 'suspended') {
-          audioCtx.resume().catch(() => {});
-        }
-        return audioCtx;
-      }
-
-      function playTempleChime(freq = 587.33) {
-        try {
-          const ctx = ensureAudioContext();
-          if (!ctx) return;
-          const now = ctx.currentTime;
-          const osc = ctx.createOscillator();
-          const overtone = ctx.createOscillator();
-          const gain = ctx.createGain();
-
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, now);
-          overtone.type = 'triangle';
-          overtone.frequency.setValueAtTime(freq * 2.756, now);
-
-          gain.gain.setValueAtTime(0.001, now);
-          gain.gain.exponentialRampToValueAtTime(0.055, now + 0.03);
-          gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.9);
-
-          osc.connect(gain);
-          overtone.connect(gain);
-          gain.connect(ctx.destination);
-
-          osc.start(now);
-          overtone.start(now);
-          osc.stop(now + 2.0);
-          overtone.stop(now + 2.0);
-        } catch (err) {}
-      }
-
-      function startTanpuraDrone(ctx) {
-        if (droneNodes) return;
-        try {
-          const masterDrone = ctx.createGain();
-          masterDrone.gain.setValueAtTime(0.001, ctx.currentTime);
-          masterDrone.gain.exponentialRampToValueAtTime(0.028, ctx.currentTime + 1.5);
-          masterDrone.connect(ctx.destination);
-
-          const freqs = [146.83, 220.00, 293.66];
-          const oscs = freqs.map((f, idx) => {
-            const osc = ctx.createOscillator();
-            const filter = ctx.createBiquadFilter();
-            osc.type = idx === 0 ? 'triangle' : 'sine';
-            osc.frequency.setValueAtTime(f, ctx.currentTime);
-            filter.type = 'lowpass';
-            filter.frequency.setValueAtTime(520, ctx.currentTime);
-            osc.connect(filter);
-            filter.connect(masterDrone);
-            osc.start();
-            return osc;
-          });
-          droneNodes = { masterDrone, oscs };
-        } catch (err) {}
-      }
-
-      function stopTanpuraDrone() {
-        if (!droneNodes) return;
-        try {
-          droneNodes.oscs.forEach((o) => {
-            try { o.stop(); } catch (e) {}
-          });
-          droneNodes.masterDrone.disconnect();
-        } catch (err) {}
-        droneNodes = null;
-      }
-
-      function triggerBansuriFluteNote(ctx, freq, duration = 0.68) {
-        const now = ctx.currentTime;
-        const osc = ctx.createOscillator();
-        const subOsc = ctx.createOscillator();
-        const vibrato = ctx.createOscillator();
-        const vibratoGain = ctx.createGain();
-        const filter = ctx.createBiquadFilter();
-        const env = ctx.createGain();
-
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq * 0.985, now);
-        osc.frequency.exponentialRampToValueAtTime(freq, now + 0.08);
-
-        subOsc.type = 'triangle';
-        subOsc.frequency.setValueAtTime(freq, now);
-
-        vibrato.type = 'sine';
-        vibrato.frequency.setValueAtTime(5.2, now);
-        vibratoGain.gain.setValueAtTime(2.8, now);
-        vibrato.connect(vibratoGain);
-        vibratoGain.connect(osc.frequency);
-
-        filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(1450, now);
-
-        env.gain.setValueAtTime(0.0008, now);
-        env.gain.exponentialRampToValueAtTime(0.055, now + 0.11);
-        env.gain.exponentialRampToValueAtTime(0.038, now + duration * 0.65);
-        env.gain.exponentialRampToValueAtTime(0.0005, now + duration);
-
-        osc.connect(filter);
-        subOsc.connect(filter);
-        filter.connect(env);
-        env.connect(ctx.destination);
-
-        osc.start(now);
-        subOsc.start(now);
-        vibrato.start(now);
-        osc.stop(now + duration + 0.05);
-        subOsc.stop(now + duration + 0.05);
-        vibrato.stop(now + duration + 0.05);
-      }
-
-      function triggerSitarSantoorPluck(ctx, freq) {
-        const now = ctx.currentTime;
-        const osc = ctx.createOscillator();
-        const harmonic = ctx.createOscillator();
-        const filter = ctx.createBiquadFilter();
-        const env = ctx.createGain();
-
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(freq, now);
-
-        harmonic.type = 'triangle';
-        harmonic.frequency.setValueAtTime(freq * 2, now);
-
-        filter.type = 'bandpass';
-        filter.frequency.setValueAtTime(freq * 2.2, now);
-        filter.Q.setValueAtTime(2.6, now);
-
-        env.gain.setValueAtTime(0.0008, now);
-        env.gain.exponentialRampToValueAtTime(0.036, now + 0.018);
-        env.gain.exponentialRampToValueAtTime(0.0004, now + 0.85);
-
-        osc.connect(filter);
-        harmonic.connect(filter);
-        filter.connect(env);
-        env.connect(ctx.destination);
-
-        osc.start(now);
-        harmonic.start(now);
-        osc.stop(now + 0.9);
-        harmonic.stop(now + 0.9);
-      }
-
-      function triggerWarmPadChord(ctx, freqs) {
-        if (!freqs) return;
-        const now = ctx.currentTime;
-        freqs.forEach((f) => {
-          const osc = ctx.createOscillator();
-          const env = ctx.createGain();
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(f * 0.5, now);
-
-          env.gain.setValueAtTime(0.0005, now);
-          env.gain.exponentialRampToValueAtTime(0.018, now + 0.35);
-          env.gain.exponentialRampToValueAtTime(0.0004, now + 2.1);
-
-          osc.connect(env);
-          env.connect(ctx.destination);
-          osc.start(now);
-          osc.stop(now + 2.2);
-        });
-      }
-
-      function startSynthEngine() {
-        const ctx = ensureAudioContext();
-        if (!ctx) return;
-        stopSynthEngine();
-        startTanpuraDrone(ctx);
-
-        const playStep = () => {
-          if (!isPlaying) return;
-          const step = weddingPhrases[melodyStep % weddingPhrases.length];
-          triggerBansuriFluteNote(ctx, step.flute, 0.68);
-          triggerSitarSantoorPluck(ctx, step.sitar);
-          if (step.chord) {
-            triggerWarmPadChord(ctx, step.chord);
-          }
-          melodyStep++;
-        };
-
-        playStep();
-        musicSchedulerTimer = setInterval(playStep, 640);
-      }
-
-      function stopSynthEngine() {
-        if (musicSchedulerTimer) {
-          clearInterval(musicSchedulerTimer);
-          musicSchedulerTimer = null;
-        }
-        stopTanpuraDrone();
       }
 
       function startMusic() {
-        isPlaying = true;
-        musicIcon.textContent = '🔊';
-        musicLabel.textContent = 'Music On';
-
-        if (bgMusic) {
-          bgMusic.muted = false;
-          bgMusic.volume = 0.85;
-          const playPromise = bgMusic.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(() => {
-              // Runs only if wedding-song.mp3 is missing or blocked
-              startSynthEngine();
+        if (!bgMusic) return;
+        bgMusic.muted = false;
+        bgMusic.volume = 0.85;
+        const playPromise = bgMusic.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              isPlaying = true;
+              musicIcon.textContent = '🔊';
+              updateMusicLabel();
+            })
+            .catch(() => {
+              isPlaying = false;
+              musicIcon.textContent = '🔇';
+              updateMusicLabel();
             });
-          }
-        } else {
-          startSynthEngine();
         }
       }
 
       function stopMusic() {
         isPlaying = false;
-        stopSynthEngine();
         if (bgMusic) {
           try {
             bgMusic.pause();
           } catch (err) {}
         }
         musicIcon.textContent = '🔇';
-        musicLabel.textContent = 'Music Off';
+        updateMusicLabel();
       }
 
-      musicBtn.addEventListener('click', () => {
+      musicBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         if (isPlaying) {
           stopMusic();
         } else {
@@ -1454,11 +1378,9 @@
 
       function startContinuousPetals() {
         if (continuousPetalsTimer) return;
-        // Initial celebratory shower
         for (let i = 0; i < 16; i++) {
           spawnSingleBlossom(Math.random() * 1.4);
         }
-        // Gentle continuous falling petals throughout the invitation
         continuousPetalsTimer = setInterval(() => {
           if (!document.hidden) {
             spawnSingleBlossom(0);
@@ -1486,7 +1408,6 @@
         invitationContent.classList.remove('hidden');
         gateOverlay.classList.add('gates-open');
 
-        playTempleChime(587.33);
         startMusic();
         startContinuousPetals();
 
