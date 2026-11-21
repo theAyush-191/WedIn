@@ -113,90 +113,6 @@
     }
 
     /* =========================================================
-       KASHI DEV DEEPAWALI (VARANASI GANGA GHAT) INTRO OVERLAY
-    ========================================================== */
-    #kashi-ghat-intro {
-      position: fixed;
-      inset: 0;
-      z-index: 60;
-      background:
-        radial-gradient(circle at 50% 44%, rgba(230, 166, 65, 0.16) 0%, rgba(16, 20, 46, 0.96) 52%, #080A18 100%);
-      transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1), transform 1.15s cubic-bezier(0.22, 1, 0.36, 1), visibility 1.15s;
-      overflow: hidden;
-      user-select: none;
-    }
-
-    #kashi-ghat-intro.ghat-lit {
-      background:
-        radial-gradient(circle at 50% 48%, rgba(255, 196, 78, 0.56) 0%, rgba(122, 34, 24, 0.92) 56%, #24060A 100%);
-    }
-
-    #kashi-ghat-intro.ghat-fade-out {
-      opacity: 0;
-      transform: scale(1.06) translateY(-20px);
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    @keyframes diyaPulse {
-      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(255, 195, 75, 0.7)); }
-      50% { transform: scale(1.05); filter: drop-shadow(0 0 24px rgba(255, 210, 105, 0.95)); }
-    }
-
-    @keyframes flameFlicker {
-      0%, 100% { transform: scaleX(1) scaleY(1) rotate(-1deg); }
-      35% { transform: scaleX(0.93) scaleY(1.08) rotate(1.5deg); }
-      70% { transform: scaleX(1.04) scaleY(0.95) rotate(-1.5deg); }
-    }
-
-    @keyframes starTwinkle {
-      0%, 100% { opacity: 0.25; }
-      50% { opacity: 0.95; }
-    }
-
-    @keyframes riverShimmer {
-      0%, 100% { transform: translateX(-4px); opacity: 0.45; }
-      50% { transform: translateX(4px); opacity: 0.9; }
-    }
-
-    @keyframes emberRise {
-      0% { transform: translateY(0) translateX(0) scale(1); opacity: 1; }
-      100% { transform: translateY(-220px) translateX(var(--drift, 20px)) scale(0.2); opacity: 0; }
-    }
-
-    .diya-cta-pulse {
-      animation: diyaPulse 2.4s ease-in-out infinite;
-    }
-
-    .flame-active {
-      transform-origin: 50% 100%;
-      animation: flameFlicker 1.2s ease-in-out infinite;
-    }
-
-    .ghat-lamp-flame {
-      opacity: 0;
-      transform: scale(0.2);
-      transform-origin: center bottom;
-      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    #kashi-ghat-intro.ghat-lit .ghat-lamp-flame {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .golden-ember {
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      border-radius: 9999px;
-      background: radial-gradient(circle, #FFF8D6 0%, #FFB732 65%, transparent 100%);
-      pointer-events: none;
-      animation: emberRise 2.2s ease-out forwards;
-      z-index: 65;
-    }
-
-    /* =========================================================
        RAJASTHAN / JAIPUR ROYAL PALACE GATE (POL) OPENING INTRO
     ========================================================== */
     #palace-gate-overlay {
@@ -579,14 +495,15 @@
     .revealed .stagger-5 { transition-delay: 0.40s; }
 
     @keyframes petalFall {
-      0% { transform: translateY(-30px) rotate(0deg); opacity: 0; }
-      15% { opacity: 0.88; }
-      100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+      0% { transform: translateY(-30px) translateX(0px) rotate(0deg); opacity: 0; }
+      12% { opacity: 0.92; }
+      50% { transform: translateY(50vh) translateX(18px) rotate(190deg); }
+      100% { transform: translateY(106vh) translateX(-14px) rotate(380deg); opacity: 0; }
     }
 
     .petal-particle {
       position: fixed;
-      top: -24px;
+      top: -28px;
       pointer-events: none;
       z-index: 45;
       animation: petalFall linear forwards;
@@ -600,32 +517,21 @@
     <div id="scroll-thread-bar"></div>
   </div>
 
-  <!-- Floating Top Controls: Sitar Audio Toggle & Customize Button -->
-  <div class="fixed top-3 right-3 z-50 flex items-center gap-2">
+  <!-- Floating Top Control: Music Toggle -->
+  <div class="fixed top-3 right-3 z-50 flex items-center">
     <button
       id="music-toggle-btn"
       type="button"
-      aria-label="Toggle Classical Wedding Instrumental Music"
+      aria-label="Toggle Wedding Music"
       class="flex items-center gap-1.5 rounded-full bg-royal-burgundy/90 hover:bg-royal-crimson text-gold-light border border-gold-champagne px-3.5 py-2 text-[11px] font-semibold uppercase tracking-wider shadow-lg backdrop-blur-md cursor-pointer transition active:scale-95"
     >
       <span id="music-icon">🔇</span>
       <span id="music-label">Music Off</span>
     </button>
-    <button
-      id="open-customizer-btn"
-      type="button"
-      aria-label="Customize Invitation"
-      class="rounded-full bg-royal-burgundy/90 hover:bg-royal-crimson text-gold-light border border-gold-champagne px-3 py-2 text-[11px] font-semibold uppercase tracking-wider shadow-lg backdrop-blur-md cursor-pointer transition active:scale-95"
-    >
-      ✎ Edit
-    </button>
   </div>
 
-  <!-- Primary Background Wedding Song -->
-  <audio id="bg-music" loop preload="auto" playsinline>
-    <source src="wedding-song.mp3" type="audio/mpeg" />
-    <!-- <source src="audio_59e2d1.mp3" type="audio/mpeg" /> -->
-  </audio>
+  <!-- Your Custom Wedding Song (Place wedding-song.mp3 in the same folder as index.html) -->
+  <audio id="bg-music" src="./wedding-song.mp3" loop preload="auto" playsinline></audio>
 
   <!-- =========================================================
        1. RAJASTHAN / JAIPUR ROYAL PALACE GATE (POL) OPENING INTRO
@@ -647,11 +553,8 @@
             <stop offset="100%" stop-color="#5B1117" />
           </linearGradient>
         </defs>
-        <!-- Carved Sandstone & Velvet Crimson Canopy -->
         <path d="M0,0 L440,0 L440,54 Q385,54 360,82 Q310,46 265,78 Q220,38 175,78 Q130,46 80,82 Q55,54 0,54 Z" fill="url(#toranCrimson)" stroke="url(#toranGold)" stroke-width="3" />
-        <!-- Inner Scalloped Gold Filigree Trim -->
         <path d="M0,46 Q55,46 80,72 Q130,38 175,68 Q220,30 265,68 Q310,38 360,72 Q385,46 440,46" fill="none" stroke="#F9E8B8" stroke-width="1.4" opacity="0.85" />
-        <!-- Hanging Gold Tassels & Auspicious Bells -->
         <g fill="url(#toranGold)">
           <circle cx="80" cy="87" r="4.5" /><polygon points="76,91 84,91 80,104" />
           <circle cx="175" cy="83" r="4.5" /><polygon points="171,87 179,87 175,100" />
@@ -669,7 +572,6 @@
         <span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span>
       </div>
       <div class="door-carved-panel">
-        <!-- Mughal Lotus & Paisley Lattice Overlay -->
         <svg class="pointer-events-none absolute inset-0 w-full h-full opacity-35" preserveAspectRatio="none">
           <defs>
             <pattern id="door-filigree-left" width="28" height="28" patternUnits="userSpaceOnUse">
@@ -680,7 +582,6 @@
           <rect width="100%" height="100%" fill="url(#door-filigree-left)" />
         </svg>
 
-        <!-- Upper Scalloped Arch Inset -->
         <div class="door-mughal-arch">
           <svg class="w-12 h-12 text-gold-champagne/75" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3">
             <path d="M32 10 C38 22 48 26 48 36 C48 45 40 50 32 50 C24 50 16 45 16 36 C16 26 26 22 32 10 Z" />
@@ -689,7 +590,6 @@
           </svg>
         </div>
 
-        <!-- Middle Brass Stud Band & Hammered Lotus Kunda Knocker -->
         <div class="relative z-10 flex items-center justify-between px-1 py-1">
           <span class="brass-stud"></span>
           <div class="kunda-knocker" aria-hidden="true">
@@ -701,7 +601,6 @@
           <span class="brass-stud"></span>
         </div>
 
-        <!-- Lower Scalloped Arch Inset -->
         <div class="door-mughal-arch">
           <svg class="w-12 h-12 text-gold-champagne/75" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3">
             <circle cx="32" cy="32" r="16" />
@@ -722,7 +621,6 @@
         <span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span>
       </div>
       <div class="door-carved-panel">
-        <!-- Mughal Lotus & Paisley Lattice Overlay -->
         <svg class="pointer-events-none absolute inset-0 w-full h-full opacity-35" preserveAspectRatio="none">
           <defs>
             <pattern id="door-filigree-right" width="28" height="28" patternUnits="userSpaceOnUse">
@@ -733,7 +631,6 @@
           <rect width="100%" height="100%" fill="url(#door-filigree-right)" />
         </svg>
 
-        <!-- Upper Scalloped Arch Inset -->
         <div class="door-mughal-arch">
           <svg class="w-12 h-12 text-gold-champagne/75" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3">
             <path d="M32 10 C38 22 48 26 48 36 C48 45 40 50 32 50 C24 50 16 45 16 36 C16 26 26 22 32 10 Z" />
@@ -742,7 +639,6 @@
           </svg>
         </div>
 
-        <!-- Middle Brass Stud Band & Hammered Lotus Kunda Knocker -->
         <div class="relative z-10 flex items-center justify-between px-1 py-1">
           <span class="brass-stud"></span>
           <div class="kunda-knocker" aria-hidden="true">
@@ -754,7 +650,6 @@
           <span class="brass-stud"></span>
         </div>
 
-        <!-- Lower Scalloped Arch Inset -->
         <div class="door-mughal-arch">
           <svg class="w-12 h-12 text-gold-champagne/75" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3">
             <circle cx="32" cy="32" r="16" />
@@ -775,7 +670,6 @@
       aria-label="Tap to Open Royal Invitation"
       class="royal-medallion-btn relative w-60 h-60 sm:w-68 sm:h-68 rounded-full bg-gradient-to-b from-royal-crimson via-royal-red to-royal-burgundy border-2 border-gold-light flex flex-col items-center justify-center px-5 text-center focus:outline-none active:scale-95"
     >
-      <!-- Rotating Outer Filigree Ring -->
       <svg class="pointer-events-none absolute inset-1.5 w-[calc(100%-12px)] h-[calc(100%-12px)] text-gold-champagne/75" viewBox="0 0 200 200" fill="none">
         <circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3" />
         <circle cx="100" cy="100" r="86" stroke="currentColor" stroke-width="0.9" />
@@ -785,10 +679,10 @@
         ॥ शुभ विवाह ॥
       </span>
       <span class="text-gold-champagne text-base my-0.5 leading-none">卐</span>
-      <span id="gate-monogram" class="font-cinzel text-xs font-extrabold text-gold-champagne tracking-[0.28em] uppercase">
+      <span class="font-cinzel text-xs font-extrabold text-gold-champagne tracking-[0.28em] uppercase">
         K &amp; S
       </span>
-      <span id="gate-couple-names" class="font-cinzel text-lg sm:text-xl font-bold text-gold-light tracking-[0.12em] uppercase mt-1 leading-tight">
+      <span class="font-cinzel text-lg sm:text-xl font-bold text-gold-light tracking-[0.12em] uppercase mt-1 leading-tight">
         Kajal &amp; Siddhant
       </span>
       <span class="w-20 h-px bg-gradient-to-r from-transparent via-gold-light to-transparent my-2"></span>
@@ -807,7 +701,6 @@
          CARD 1: HERO (SHAHJAHANI SCALLOPED ARCH + GANESH INVOCATION)
     ========================================================== -->
     <section class="mughal-jali-card reveal-on-scroll">
-      <!-- 24K Gold Geometric Jali Lattice Outer Frame -->
       <svg class="pointer-events-none absolute inset-0 w-full h-full" preserveAspectRatio="none">
         <defs>
           <pattern id="jali-hero" width="28" height="28" patternUnits="userSpaceOnUse">
@@ -859,7 +752,7 @@
 
         <!-- Couple Names -->
         <div class="stagger-item stagger-3 my-3.5">
-          <h1 id="hero-bride-name" class="font-cinzel text-3xl font-bold text-royal-crimson tracking-[0.14em] uppercase">
+          <h1 class="font-cinzel text-3xl font-bold text-royal-crimson tracking-[0.14em] uppercase">
             Kajal
           </h1>
           <div class="flex items-center justify-center gap-3 my-1">
@@ -867,7 +760,7 @@
             <span class="zari-foil-text font-serif italic text-2xl font-bold">&amp;</span>
             <span class="h-px w-10 bg-gradient-to-l from-transparent to-gold-antique"></span>
           </div>
-          <h1 id="hero-groom-name" class="font-cinzel text-3xl font-bold text-royal-crimson tracking-[0.14em] uppercase">
+          <h1 class="font-cinzel text-3xl font-bold text-royal-crimson tracking-[0.14em] uppercase">
             Siddhant
           </h1>
         </div>
@@ -878,7 +771,7 @@
 
         <!-- Wedding Date & Main Venue Pill -->
         <div class="stagger-item stagger-4 mx-auto mt-4 rounded-2xl bg-gradient-to-r from-royal-burgundy via-royal-red to-royal-burgundy border border-gold-champagne px-4 py-3 text-silk-ivory shadow-md">
-          <p id="hero-wedding-date" class="font-cinzel text-xs font-semibold text-gold-light tracking-[0.12em] uppercase">
+          <p class="font-cinzel text-xs font-semibold text-gold-light tracking-[0.12em] uppercase">
             12th December 2026
           </p>
           <p class="font-serif italic text-base text-silk-cream mt-0.5">
@@ -939,11 +832,11 @@
 
         <!-- Bride's Parents Block -->
         <div class="stagger-item stagger-3 my-4 py-3.5 px-4 rounded-2xl bg-royal-red/[0.04] border border-gold-antique/55">
-          <h3 id="family-bride-name" class="font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.12em] uppercase">
+          <h3 class="font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.12em] uppercase">
             Kajal
           </h3>
           <p class="font-serif italic text-sm text-royal-red mt-0.5">Beloved Daughter of</p>
-          <p id="family-bride-parents" class="font-serif font-bold text-lg text-royal-burgundy mt-0.5">
+          <p class="font-serif font-bold text-lg text-royal-burgundy mt-0.5">
             Smt. Mithilesh &amp; Shree Santosh Singh
           </p>
         </div>
@@ -956,11 +849,11 @@
 
         <!-- Groom's Parents Block -->
         <div class="stagger-item stagger-4 mt-4 py-3.5 px-4 rounded-2xl bg-royal-red/[0.04] border border-gold-antique/55">
-          <h3 id="family-groom-name" class="font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.12em] uppercase">
+          <h3 class="font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.12em] uppercase">
             Siddhant
           </h3>
           <p class="font-serif italic text-sm text-royal-red mt-0.5">Beloved Son of</p>
-          <p id="family-groom-parents" class="font-serif font-bold text-lg text-royal-burgundy mt-0.5">
+          <p class="font-serif font-bold text-lg text-royal-burgundy mt-0.5">
             Smt. Suman &amp; Shree Uttam Singh
           </p>
         </div>
@@ -1083,6 +976,7 @@
           </div>
         </div>
       </article>
+
       <!-- CARD 3C: Shubh Vivah / Wedding -->
       <article class="mughal-jali-card reveal-on-scroll">
         <svg class="pointer-events-none absolute inset-0 w-full h-full" preserveAspectRatio="none">
@@ -1213,7 +1107,7 @@
           <span class="line"></span>
         </div>
 
-        <p id="closing-elders-names" class="stagger-item stagger-3 font-serif text-xl font-bold text-royal-crimson leading-snug">
+        <p class="stagger-item stagger-3 font-serif text-xl font-bold text-royal-crimson leading-snug">
           Grandfather Shree Mangala Prasad Singh &amp; Grandmother Smt. Jadavati Devi
         </p>
         <p class="stagger-item stagger-4 font-serif italic text-base text-royal-burgundy/90 mt-1.5">
@@ -1234,7 +1128,6 @@
             <span>Add to Calendar</span>
           </button>
           <a
-            id="whatsapp-share-btn"
             href="https://wa.me/?text=%E0%A5%90%20%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%97%E0%A4%A3%E0%A5%87%E0%A4%B6%E0%A4%BE%E0%A4%AF%20%E0%A4%A8%E0%A4%AE%E0%A4%83%20%E2%80%94%20You%20are%20cordially%20invited%20to%20the%20Royal%20Wedding%20of%20Kajal%20%26%20Siddhant%20on%2012th%20December%202026%20at%20KPS%20Resort%2C%20Mangari%2C%20Babatpur%2C%20Varanasi."
             target="_blank"
             rel="noopener noreferrer"
@@ -1249,70 +1142,15 @@
   </main>
 
   <!-- =========================================================
-       3. LIVE CUSTOMIZER MODAL
-  ========================================================== -->
-  <div id="customizer-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 p-4 backdrop-blur-sm">
-    <div class="w-full max-w-md rounded-3xl bg-silk-ivory border-2 border-gold-antique p-6 shadow-2xl">
-      <div class="flex items-center justify-between border-b border-gold-antique/40 pb-3 mb-4">
-        <h3 class="font-cinzel text-lg font-bold text-royal-burgundy">Customize Invitation</h3>
-        <button id="close-customizer-btn" type="button" class="text-royal-burgundy hover:text-royal-crimson text-xl font-bold cursor-pointer">&times;</button>
-      </div>
-
-      <div class="space-y-3 text-left">
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-royal-burgundy mb-1">Bride's Name</label>
-            <input id="edit-bride" type="text" value="Kajal" class="w-full rounded-xl border border-gold-antique/60 bg-white px-3 py-2 text-royal-burgundy" />
-          </div>
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-royal-burgundy mb-1">Groom's Name</label>
-            <input id="edit-groom" type="text" value="Siddhant" class="w-full rounded-xl border border-gold-antique/60 bg-white px-3 py-2 text-royal-burgundy" />
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-royal-burgundy mb-1">Wedding Date Text</label>
-          <input id="edit-date" type="text" value="12th December 2026" class="w-full rounded-xl border border-gold-antique/60 bg-white px-3 py-2 text-royal-burgundy" />
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-royal-burgundy mb-1">Eldest Grandparents</label>
-          <input id="edit-elders" type="text" value="Grandfather Shree Mangala Prasad Singh & Grandmother Smt. Jadavati Devi" class="w-full rounded-xl border border-gold-antique/60 bg-white px-3 py-2 text-royal-burgundy" />
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-royal-burgundy mb-1">Custom Wedding Song (.MP3)</label>
-          <input id="edit-audio-file" type="file" accept="audio/*" class="w-full rounded-xl border border-gold-antique/60 bg-white px-3 py-1.5 text-xs text-royal-burgundy file:mr-3 file:rounded-full file:border-0 file:bg-royal-crimson file:px-3 file:py-1 file:text-[11px] file:font-semibold file:text-gold-light" />
-        </div>
-      </div>
-
-      <div class="mt-5 flex justify-end gap-2">
-        <button id="save-customizer-btn" type="button" class="rounded-full bg-royal-crimson text-gold-light border border-gold-antique px-5 py-2 text-xs font-bold uppercase tracking-wider cursor-pointer">
-          Apply Changes
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================
-       4. COMPLETE INTERACTIVE ENGINE (PALACE GATE, SCROLL, AUDIO)
+       3. INTERACTIVE ENGINE (PALACE GATE, CONTINUOUS PETALS, MP3)
   ========================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const state = {
-        bride: 'Kajal',
-        groom: 'Siddhant',
-        dateText: '12th December 2026',
-        elders: 'Grandfather Shree Mangala Prasad Singh & Grandmother Smt. Jadavati Devi'
-      };
-
       // =========================================================
-      // MULTI-VOICE INDIAN WEDDING BANSURI, SITAR & TANPURA ENGINE
-      // + SEAMLESS CUSTOM MP3 FILE UPLOAD SUPPORT
+      // CUSTOM MP3 AUDIO CONTROLLER (+ EMERGENCY SYNTH BACKUP)
       // =========================================================
       let audioCtx = null;
       let isPlaying = false;
-      let useCustomMp3 = false;
       let musicSchedulerTimer = null;
       let droneNodes = null;
       let melodyStep = 0;
@@ -1321,24 +1159,20 @@
       const musicBtn = document.getElementById('music-toggle-btn');
       const musicIcon = document.getElementById('music-icon');
       const musicLabel = document.getElementById('music-label');
-      const editAudioInput = document.getElementById('edit-audio-file');
 
-      // Raag Yaman Kalyan / Wedding Flute & Sitar Phrase Pattern (in Hz, Sa = D4 / 293.66Hz)
       const weddingPhrases = [
-        // Bar 1: Expressive Bansuri Flute opening
-        { flute: 440.00, sitar: 293.66, chord: [293.66, 369.99, 440.00] }, // Pa / Sa
-        { flute: 493.88, sitar: 369.99, chord: null },                     // Dha / Ga
-        { flute: 554.37, sitar: 440.00, chord: null },                     // Ni / Pa
-        { flute: 587.33, sitar: 554.37, chord: [329.63, 415.30, 493.88] }, // Sa' / Ni
-        { flute: 554.37, sitar: 440.00, chord: null },                     // Ni / Pa
-        { flute: 493.88, sitar: 369.99, chord: null },                     // Dha / Ga
-        // Bar 2: Romantic Sitar & Flute interplay
-        { flute: 440.00, sitar: 587.33, chord: [293.66, 369.99, 440.00] }, // Pa / Sa'
-        { flute: 415.30, sitar: 493.88, chord: null },                     // Ma# / Dha
-        { flute: 369.99, sitar: 440.00, chord: null },                     // Ga / Pa
-        { flute: 329.63, sitar: 369.99, chord: [246.94, 293.66, 369.99] }, // Re / Ga
-        { flute: 369.99, sitar: 329.63, chord: null },                     // Ga / Re
-        { flute: 293.66, sitar: 293.66, chord: null }                      // Sa / Sa
+        { flute: 440.00, sitar: 293.66, chord: [293.66, 369.99, 440.00] },
+        { flute: 493.88, sitar: 369.99, chord: null },
+        { flute: 554.37, sitar: 440.00, chord: null },
+        { flute: 587.33, sitar: 554.37, chord: [329.63, 415.30, 493.88] },
+        { flute: 554.37, sitar: 440.00, chord: null },
+        { flute: 493.88, sitar: 369.99, chord: null },
+        { flute: 440.00, sitar: 587.33, chord: [293.66, 369.99, 440.00] },
+        { flute: 415.30, sitar: 493.88, chord: null },
+        { flute: 369.99, sitar: 440.00, chord: null },
+        { flute: 329.63, sitar: 369.99, chord: [246.94, 293.66, 369.99] },
+        { flute: 369.99, sitar: 329.63, chord: null },
+        { flute: 293.66, sitar: 293.66, chord: null }
       ];
 
       function ensureAudioContext() {
@@ -1351,19 +1185,6 @@
           audioCtx.resume().catch(() => {});
         }
         return audioCtx;
-      }
-
-      if (editAudioInput && bgMusic) {
-        editAudioInput.addEventListener('change', (e) => {
-          const file = e.target.files && e.target.files[0];
-          if (!file) return;
-          stopSynthEngine();
-          const objectUrl = URL.createObjectURL(file);
-          bgMusic.src = objectUrl;
-          bgMusic.load();
-          useCustomMp3 = true;
-          startMusic();
-        });
       }
 
       function playTempleChime(freq = 587.33) {
@@ -1392,9 +1213,7 @@
           overtone.start(now);
           osc.stop(now + 2.0);
           overtone.stop(now + 2.0);
-        } catch (err) {
-          // Safe fallback
-        }
+        } catch (err) {}
       }
 
       function startTanpuraDrone(ctx) {
@@ -1405,7 +1224,6 @@
           masterDrone.gain.exponentialRampToValueAtTime(0.028, ctx.currentTime + 1.5);
           masterDrone.connect(ctx.destination);
 
-          // D3 (146.83 Hz) Sa & A3 (220.00 Hz) Pa warm Tanpura drone
           const freqs = [146.83, 220.00, 293.66];
           const oscs = freqs.map((f, idx) => {
             const osc = ctx.createOscillator();
@@ -1420,9 +1238,7 @@
             return osc;
           });
           droneNodes = { masterDrone, oscs };
-        } catch (err) {
-          // Safe fallback
-        }
+        } catch (err) {}
       }
 
       function stopTanpuraDrone() {
@@ -1445,7 +1261,6 @@
         const filter = ctx.createBiquadFilter();
         const env = ctx.createGain();
 
-        // Warm breathy Bansuri timbre
         osc.type = 'sine';
         osc.frequency.setValueAtTime(freq * 0.985, now);
         osc.frequency.exponentialRampToValueAtTime(freq, now + 0.08);
@@ -1453,7 +1268,6 @@
         subOsc.type = 'triangle';
         subOsc.frequency.setValueAtTime(freq, now);
 
-        // Gentle meend / vibrato
         vibrato.type = 'sine';
         vibrato.frequency.setValueAtTime(5.2, now);
         vibratoGain.gain.setValueAtTime(2.8, now);
@@ -1540,7 +1354,7 @@
         startTanpuraDrone(ctx);
 
         const playStep = () => {
-          if (!isPlaying || useCustomMp3) return;
+          if (!isPlaying) return;
           const step = weddingPhrases[melodyStep % weddingPhrases.length];
           triggerBansuriFluteNote(ctx, step.flute, 0.68);
           triggerSitarSantoorPluck(ctx, step.sitar);
@@ -1567,14 +1381,13 @@
         musicIcon.textContent = '🔊';
         musicLabel.textContent = 'Music On';
 
-        if (useCustomMp3 && bgMusic && bgMusic.src) {
+        if (bgMusic) {
           bgMusic.muted = false;
           bgMusic.volume = 0.85;
           const playPromise = bgMusic.play();
           if (playPromise !== undefined) {
             playPromise.catch(() => {
-              // Fallback gracefully to Web Audio Bansuri & Sitar if custom MP3 fails
-              useCustomMp3 = false;
+              // Runs only if wedding-song.mp3 is missing or blocked
               startSynthEngine();
             });
           }
@@ -1589,9 +1402,7 @@
         if (bgMusic) {
           try {
             bgMusic.pause();
-          } catch (err) {
-            // Safe fallback
-          }
+          } catch (err) {}
         }
         musicIcon.textContent = '🔇';
         musicLabel.textContent = 'Music Off';
@@ -1606,6 +1417,56 @@
       });
 
       // =========================================================
+      // CONTINUOUS FALLING MARIGOLD & ROSE GARLAND BLOSSOMS
+      // =========================================================
+      let continuousPetalsTimer = null;
+
+      function spawnSingleBlossom(delaySec = 0) {
+        const colors = [
+          '#E07A16', // Marigold Saffron
+          '#F59E0B', // Bright Genda Gold
+          '#9B1C26', // Deep Rose Crimson
+          '#D4AF37', // 24K Zari Gold
+          '#C81E32'  // Sindoori Rose
+        ];
+        const petal = document.createElement('div');
+        petal.className = 'petal-particle';
+        const size = 9 + Math.random() * 8;
+        const duration = 6.2 + Math.random() * 4.2;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+
+        petal.style.width = `${size}px`;
+        petal.style.height = `${size * 0.78}px`;
+        petal.style.left = `${Math.random() * 100}vw`;
+        petal.style.backgroundColor = color;
+        petal.style.boxShadow = '0 2px 6px rgba(0,0,0,0.35)';
+        petal.style.borderRadius = Math.random() > 0.45
+          ? '68% 32% 68% 32%'
+          : '50% 50% 35% 65%';
+        petal.style.animationDuration = `${duration}s`;
+        petal.style.animationDelay = `${delaySec}s`;
+
+        document.body.appendChild(petal);
+        setTimeout(() => {
+          if (petal.parentNode) petal.remove();
+        }, (duration + delaySec) * 1000 + 300);
+      }
+
+      function startContinuousPetals() {
+        if (continuousPetalsTimer) return;
+        // Initial celebratory shower
+        for (let i = 0; i < 16; i++) {
+          spawnSingleBlossom(Math.random() * 1.4);
+        }
+        // Gentle continuous falling petals throughout the invitation
+        continuousPetalsTimer = setInterval(() => {
+          if (!document.hidden) {
+            spawnSingleBlossom(0);
+          }
+        }, 850);
+      }
+
+      // =========================================================
       // RAJASTHAN ROYAL PALACE GATE (POL) SLIDING DOOR REVEAL
       // =========================================================
       const gateOverlay = document.getElementById('palace-gate-overlay');
@@ -1617,24 +1478,6 @@
       const scrollThreadBar = document.getElementById('scroll-thread-bar');
       let gatesOpened = false;
 
-      function launchPetals(count = 22) {
-        const colors = ['#D4AF37', '#E6C67A', '#5B1117', '#F9E8B8'];
-        for (let i = 0; i < count; i++) {
-          const petal = document.createElement('div');
-          petal.className = 'petal-particle';
-          const size = 8 + Math.random() * 7;
-          petal.style.width = `${size}px`;
-          petal.style.height = `${size * 0.72}px`;
-          petal.style.left = `${Math.random() * 100}vw`;
-          petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-          petal.style.borderRadius = '65% 35% 65% 35%';
-          petal.style.animationDuration = `${4.8 + Math.random() * 3.8}s`;
-          petal.style.animationDelay = `${Math.random() * 1.2}s`;
-          document.body.appendChild(petal);
-          setTimeout(() => petal.remove(), 9200);
-        }
-      }
-
       function openRoyalPalaceGates(e) {
         if (e && e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
         if (gatesOpened) return;
@@ -1645,7 +1488,7 @@
 
         playTempleChime(587.33);
         startMusic();
-        launchPetals(24);
+        startContinuousPetals();
 
         requestAnimationFrame(() => {
           updateScrollEffects();
@@ -1743,67 +1586,25 @@
             'BEGIN:VEVENT',
             'DTSTART:20261212T133000Z',
             'DTEND:20261212T213000Z',
-            `SUMMARY:Royal Wedding of ${state.bride} & ${state.groom}`,
+            'SUMMARY:Royal Wedding of Kajal & Siddhant',
             'DESCRIPTION:With the blessings of Grandfather Shree Mangala Prasad Singh & Grandmother Smt. Jadavati Devi.',
             'LOCATION:KPS Resort, Mangari, Babatpur, Varanasi, Uttar Pradesh',
             'END:VEVENT',
             'END:VCALENDAR'
-          ].join('\r\n');
+          ].join('
+');
 
           const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
           const url = URL.createObjectURL(blob);
           const link = document.createElement('a');
           link.href = url;
-          link.download = `${state.bride}-${state.groom}-Wedding.ics`;
+          link.download = 'Kajal-Siddhant-Wedding.ics';
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
           URL.revokeObjectURL(url);
         });
       }
-
-      // =========================================================
-      // LIVE CUSTOMIZER MODAL CONTROLS
-      // =========================================================
-      const customizerModal = document.getElementById('customizer-modal');
-      const openCustomizerBtn = document.getElementById('open-customizer-btn');
-      const closeCustomizerBtn = document.getElementById('close-customizer-btn');
-      const saveCustomizerBtn = document.getElementById('save-customizer-btn');
-
-      openCustomizerBtn.addEventListener('click', () => {
-        customizerModal.classList.remove('hidden');
-        customizerModal.classList.add('flex');
-      });
-
-      closeCustomizerBtn.addEventListener('click', () => {
-        customizerModal.classList.add('hidden');
-        customizerModal.classList.remove('flex');
-      });
-
-      saveCustomizerBtn.addEventListener('click', () => {
-        state.bride = document.getElementById('edit-bride').value.trim() || 'Kajal';
-        state.groom = document.getElementById('edit-groom').value.trim() || 'Siddhant';
-        state.dateText = document.getElementById('edit-date').value.trim() || '12th December 2026';
-        state.elders = document.getElementById('edit-elders').value.trim() || state.elders;
-
-        document.getElementById('gate-monogram').textContent = `${state.bride[0]} & ${state.groom[0]}`;
-        document.getElementById('gate-couple-names').textContent = `${state.bride} & ${state.groom}`;
-        document.getElementById('hero-bride-name').textContent = state.bride;
-        document.getElementById('hero-groom-name').textContent = state.groom;
-        document.getElementById('hero-wedding-date').textContent = state.dateText;
-        document.getElementById('family-bride-name').textContent = state.bride;
-        document.getElementById('family-groom-name').textContent = state.groom;
-        document.getElementById('closing-elders-names').textContent = state.elders;
-
-        const whatsappBtn = document.getElementById('whatsapp-share-btn');
-        if (whatsappBtn) {
-          const msg = encodeURIComponent(`ॐ श्री गणेशाय नमः — You are cordially invited to the Royal Wedding of ${state.bride} & ${state.groom} on ${state.dateText} at KPS Resort, Mangari, Babatpur, Varanasi.`);
-          whatsappBtn.href = `https://wa.me/?text=${msg}`;
-        }
-
-        customizerModal.classList.add('hidden');
-        customizerModal.classList.remove('flex');
-      });
     });
   </script>
 </body>
