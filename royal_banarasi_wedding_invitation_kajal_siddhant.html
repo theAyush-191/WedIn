@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kajal &amp; Siddhant — Royal Banarasi Wedding Invitation</title>
+
+  <!-- Google Fonts: Cinzel, Cormorant Garamond, Jost & Noto Serif Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'royal-red': '#450B10',
+            'royal-crimson': '#5B1117',
+            'royal-burgundy': '#2B0609',
+            'royal-maroon': '#1A0305',
+            'gold-light': '#F9E8B8',
+            'gold-champagne': '#E6C67A',
+            'gold-antique': '#C99E44',
+            'gold-deep': '#8B631E',
+            'silk-ivory': '#FBF6EC',
+            'silk-cream': '#F4ECDC',
+            'emerald-royal': '#145338',
+            'marigold-rich': '#E07A16',
+          },
+          fontFamily: {
+            'cinzel': ['"Cinzel"', 'serif'],
+            'serif': ['"Cormorant Garamond"', 'serif'],
+            'sans': ['"Jost"', 'sans-serif'],
+            'hindi': ['"Noto Serif Devanagari"', 'serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #1A0305;
+      color: #2B0609;
+      font-family: 'Jost', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hindi-text {
+      font-family: 'Noto Serif Devanagari', serif;
+      letter-spacing: normal !important;
+      word-spacing: 0.14em;
+    }
+
+    /* Rich Velvet Wine Crimson & Banarasi Brocade Silk Weave Backdrop */
+    .banarasi-brocade-bg {
+      background-color: #36080C;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(230, 198, 122, 0.24), transparent 68%),
+        repeating-linear-gradient(0deg, rgba(230, 198, 122, 0.035) 0px, rgba(230, 198, 122, 0.035) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(90deg, rgba(230, 198, 122, 0.035) 0px, rgba(230, 198, 122, 0.035) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(45deg, rgba(201, 158, 68, 0.06) 0px, rgba(201, 158, 68, 0.06) 1px, transparent 1px, transparent 20px),
+        repeating-linear-gradient(-45deg, rgba(201, 158, 68, 0.06) 0px, rgba(201, 158, 68, 0.06) 1px, transparent 1px, transparent 20px),
+        linear-gradient(180deg, #240407 0%, #450B10 50%, #1D0305 100%);
+    }
+
+    /* Top Gold Silk Thread Scroll Progress Bar */
+    #scroll-thread-track {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      z-index: 48;
+      background: rgba(26, 3, 5, 0.88);
+      backdrop-filter: blur(4px);
+    }
+
+    #scroll-thread-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #C99E44 0%, #E6C67A 50%, #F9E8B8 100%);
+      box-shadow: 0 0 12px rgba(230, 198, 122, 0.9);
+      transition: width 0.08s linear;
+    }
+
+    /* Mobile-First Portrait E-Card Shell (max 420px centered) */
+    .mobile-card-shell {
+      width: 100%;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      perspective: 1200px;
+    }
+
+    @media (min-width: 460px) {
+      .mobile-card-shell {
+        box-shadow: 0 0 0 1px rgba(230, 198, 122, 0.38), 0 32px 95px rgba(0, 0, 0, 0.95);
+        background: linear-gradient(180deg, rgba(36, 4, 7, 0.72) 0%, rgba(69, 11, 16, 0.5) 50%, rgba(29, 3, 5, 0.8) 100%);
+      }
+    }
+
+    /* =========================================================
+       KASHI DEV DEEPAWALI (VARANASI GANGA GHAT) INTRO OVERLAY
+    ========================================================== */
+    #kashi-ghat-intro {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background:
+        radial-gradient(circle at 50% 44%, rgba(230, 166, 65, 0.16) 0%, rgba(16, 20, 46, 0.96) 52%, #080A18 100%);
+      transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1), transform 1.15s cubic-bezier(0.22, 1, 0.36, 1), visibility 1.15s;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    #kashi-ghat-intro.ghat-lit {
+      background:
+        radial-gradient(circle at 50% 48%, rgba(255, 196, 78, 0.56) 0%, rgba(122, 34, 24, 0.92) 56%, #24060A 100%);
+    }
+
+    #kashi-ghat-intro.ghat-fade-out {
+      opacity: 0;
+      transform: scale(1.06) translateY(-20px);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    @keyframes diyaPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(255, 195, 75, 0.7)); }
+      50% { transform: scale(1.05); filter: drop-shadow(0 0 24px rgba(255, 210, 105, 0.95)); }
+    }
+
+    @keyframes flameFlicker {
+      0%, 100% { transform: scaleX(1) scaleY(1) rotate(-1deg); }
+      35% { transform: scaleX(0.93) scaleY(1.08) rotate(1.5deg); }
+      70% { transform: scaleX(1.04) scaleY(0.95) rotate(-1.5deg); }
+    }
+
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.25; }
+      50% { opacity: 0.95; }
+    }
+
+    @keyframes riverShimmer {
+      0%, 100% { transform: translateX(-4px); opacity: 0.45; }
+      50% { transform: translateX(4px); opacity: 0.9; }
+    }
+
+    @keyframes emberRise {
+      0% { transform: translateY(0) translateX(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-220px) translateX(var(--drift, 20px)) scale(0.2); opacity: 0; }
+    }
+
+    .diya-cta-pulse {
+      animation: diyaPulse 2.4s ease-in-out infinite;
+    }
+
+    .flame-active {
+      transform-origin: 50% 100%;
+      animation: flameFlicker 1.2s ease-in-out infinite;
+    }
+
+    .ghat-lamp-flame {
+      opacity: 0;
+      transform: scale(0.2);
+      transform-origin: center bottom;
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #kashi-ghat-intro.ghat-lit .ghat-lamp-flame {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .golden-ember {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, #FFF8D6 0%, #FFB732 65%, transparent 100%);
+      pointer-events: none;
+      animation: emberRise 2.2s ease-out forwards;
+      z-index: 65;
+    }
+
+    /* =========================================================
+       RAJASTHAN / JAIPUR ROYAL PALACE GATE (POL) OPENING INTRO
+    ========================================================== */
+    #palace-gate-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      overflow: hidden;
+      background-color: #1A0305;
+      cursor: pointer;
+      touch-action: manipulation;
+      transition: visibility 1.55s ease;
+    }
+
+    #palace-gate-overlay.gate-hidden {
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Outer Sandstone & 24K Gold Jharokha Toran Arch Header */
+    #gate-jharokha-toran {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 63;
+      pointer-events: none;
+      transition: transform 1.25s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.1s ease;
+    }
+
+    #palace-gate-overlay.gates-open #gate-jharokha-toran {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    .palace-door {
+      position: relative;
+      width: 50%;
+      height: 100%;
+      background-color: #3E080D;
+      background-image:
+        radial-gradient(circle at 50% 50%, rgba(230, 198, 122, 0.16), transparent 74%),
+        repeating-linear-gradient(90deg, rgba(20, 2, 4, 0.42) 0px, rgba(20, 2, 4, 0.42) 2px, transparent 2px, transparent 26px),
+        repeating-linear-gradient(0deg, rgba(212, 175, 55, 0.045) 0px, rgba(212, 175, 55, 0.045) 1px, transparent 1px, transparent 16px),
+        linear-gradient(90deg, #240407 0%, #560F16 48%, #2E0509 100%);
+      transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4.4rem 0.85rem 1.25rem;
+    }
+
+    #palace-door-left {
+      border-right: 3px solid #D4AF37;
+      box-shadow: inset -16px 0 36px rgba(0, 0, 0, 0.78), 4px 0 18px rgba(0, 0, 0, 0.85);
+    }
+
+    #palace-door-right {
+      border-left: 3px solid #D4AF37;
+      box-shadow: inset 16px 0 36px rgba(0, 0, 0, 0.78), -4px 0 18px rgba(0, 0, 0, 0.85);
+    }
+
+    #palace-gate-overlay.gates-open #palace-door-left {
+      transform: translateX(-102%);
+    }
+
+    #palace-gate-overlay.gates-open #palace-door-right {
+      transform: translateX(102%);
+    }
+
+    /* Deep Carved Wooden Relief & Brass Frame */
+    .door-carved-panel {
+      flex: 1;
+      border: 2px solid rgba(230, 198, 122, 0.8);
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.09), rgba(20, 2, 4, 0.45) 100%);
+      box-shadow:
+        inset 0 0 0 5px #2B0508,
+        inset 0 0 0 7px rgba(212, 175, 55, 0.58),
+        inset 0 10px 26px rgba(0, 0, 0, 0.75);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.85rem 0.65rem;
+      overflow: hidden;
+    }
+
+    .door-mughal-arch {
+      height: 36%;
+      border: 1.5px solid rgba(230, 198, 122, 0.72);
+      border-top-left-radius: 95px 68px;
+      border-top-right-radius: 95px 68px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(249, 232, 184, 0.14), rgba(26, 3, 5, 0.55) 78%);
+      box-shadow:
+        inset 0 0 0 4px rgba(43, 5, 8, 0.85),
+        inset 0 0 0 5px rgba(212, 175, 55, 0.45);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Embossed Brass Dome Studs (Kheel) */
+    .brass-stud-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.25rem 0.2rem;
+    }
+
+    .brass-stud {
+      width: 11px;
+      height: 11px;
+      border-radius: 9999px;
+      background: radial-gradient(circle at 32% 30%, #FFF7D6 0%, #E6C67A 38%, #B38326 78%, #5E3E08 100%);
+      border: 1px solid #4A2E04;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.85);
+    }
+
+    /* Hammered Brass Lotus Door Knocker (Kunda) */
+    .kunda-knocker {
+      position: relative;
+      width: 44px;
+      height: 58px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.85));
+    }
+
+    .kunda-rosette {
+      width: 30px;
+      height: 30px;
+      border-radius: 9999px;
+      background: radial-gradient(circle at 35% 35%, #FFF4C8, #D4AF37 55%, #7A5310 100%);
+      border: 1.5px solid #F9E8B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 0 3px #5E3E08;
+    }
+
+    .kunda-ring {
+      width: 28px;
+      height: 28px;
+      margin-top: -7px;
+      border-radius: 9999px;
+      border: 4px solid #E6C67A;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.85), inset 0 1px 2px #FFF7D6;
+    }
+
+    /* Central Brass Latch Bar */
+    .center-brass-latch {
+      position: absolute;
+      top: 50%;
+      width: 12px;
+      height: 132px;
+      transform: translateY(-50%);
+      background: linear-gradient(180deg, #8B631E 0%, #F9E8B8 25%, #D4AF37 50%, #F9E8B8 75%, #785212 100%);
+      border: 1px solid #3D2504;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
+      z-index: 62;
+    }
+
+    #palace-door-left .center-brass-latch {
+      right: 0;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+
+    #palace-door-right .center-brass-latch {
+      left: 0;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    #gate-center-seal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 66;
+      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    #palace-gate-overlay.gates-open #gate-center-seal {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.82);
+      pointer-events: none;
+    }
+
+    @keyframes sealBreath {
+      0%, 100% {
+        box-shadow:
+          0 0 0 5px #2B0508,
+          0 0 0 8px #D4AF37,
+          0 0 0 12px #450B10,
+          0 0 0 14px rgba(249, 232, 184, 0.75),
+          0 22px 55px rgba(0, 0, 0, 0.95),
+          0 0 28px rgba(230, 198, 122, 0.55);
+      }
+      50% {
+        box-shadow:
+          0 0 0 5px #2B0508,
+          0 0 0 8px #F9E8B8,
+          0 0 0 12px #5B1117,
+          0 0 0 14px #E6C67A,
+          0 26px 65px rgba(0, 0, 0, 0.98),
+          0 0 46px rgba(249, 232, 184, 0.9);
+      }
+    }
+
+    .royal-medallion-btn {
+      animation: sealBreath 2.6s ease-in-out infinite;
+    }
+
+    /* =========================================================
+       BANARASI SINDOORI (#5B1117) & 24K ZARI GOLD (#D4AF37) CARDS
+    ========================================================== */
+    .mughal-jali-card {
+      position: relative;
+      background-color: #5B1117;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.24), transparent 68%),
+        radial-gradient(circle at 50% 100%, rgba(212, 175, 55, 0.16), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(251, 246, 236, 0.03) 0px, rgba(251, 246, 236, 0.03) 1px, transparent 1px, transparent 3px),
+        repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.07) 0px, rgba(0, 0, 0, 0.07) 1px, transparent 1px, transparent 3px),
+        linear-gradient(180deg, rgba(43, 6, 9, 0.3) 0%, rgba(91, 17, 23, 0.06) 50%, rgba(34, 4, 7, 0.5) 100%);
+      border: 2px solid #D4AF37;
+      border-radius: 22px;
+      padding: 1.35rem 0.95rem 1.35rem;
+      box-shadow:
+        0 26px 60px rgba(10, 2, 3, 0.9),
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        inset 0 0 0 4px #450B10,
+        inset 0 0 0 5.5px #D4AF37;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+      transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.85s ease;
+    }
+
+    .mughal-jali-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent 25%, rgba(249, 232, 184, 0.24) 50%, transparent 75%);
+      transform: translateX(-120%);
+      transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+      z-index: 30;
+    }
+
+    .mughal-jali-card.revealed::after {
+      transform: translateX(120%);
+    }
+
+    /* Warm Raw Silk Ivory (#FBF6EC) Scalloped Mughal Arch Windows */
+    .alabaster-arch-panel {
+      position: relative;
+      background-color: #FBF6EC;
+      background-image:
+        radial-gradient(circle at 50% 18%, rgba(255, 253, 248, 0.95), transparent 74%),
+        repeating-linear-gradient(0deg, rgba(212, 175, 55, 0.03) 0px, rgba(212, 175, 55, 0.03) 1px, transparent 1px, transparent 6px),
+        repeating-linear-gradient(90deg, rgba(91, 17, 23, 0.02) 0px, rgba(91, 17, 23, 0.02) 1px, transparent 1px, transparent 6px),
+        linear-gradient(180deg, #FBF6EC 0%, #F7EFE0 66%, #F2E7D1 100%);
+      border: 1.5px solid #D4AF37;
+      border-top-left-radius: 145px 96px;
+      border-top-right-radius: 145px 96px;
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+      box-shadow:
+        0 14px 30px rgba(28, 3, 6, 0.58),
+        0 2px 0 rgba(230, 198, 122, 0.6),
+        inset 0 6px 14px rgba(91, 17, 23, 0.12),
+        inset 0 0 0 4px #FBF6EC,
+        inset 0 0 0 5.5px rgba(212, 175, 55, 0.85);
+    }
+
+    /* Distinct Refined Arch Silhouettes per Card */
+    .arch-shahjahani {
+      border-top-left-radius: 155px 104px;
+      border-top-right-radius: 155px 104px;
+    }
+
+    .arch-lotus-dome {
+      border-top-left-radius: 170px 115px;
+      border-top-right-radius: 170px 115px;
+    }
+
+    .arch-temple-toran {
+      border-top-left-radius: 125px 88px;
+      border-top-right-radius: 125px 88px;
+    }
+
+    .arch-mandap-scallop {
+      border-top-left-radius: 155px 92px;
+      border-top-right-radius: 155px 92px;
+    }
+
+    .arch-doli-pavilion {
+      border-top-left-radius: 175px 108px;
+      border-top-right-radius: 175px 108px;
+    }
+
+    .arch-sunset-mehrab {
+      border-top-left-radius: 145px 102px;
+      border-top-right-radius: 145px 102px;
+    }
+
+    .arch-octagonal-crest {
+      border-top-left-radius: 130px 90px;
+      border-top-right-radius: 130px 90px;
+    }
+
+    /* Fine Gold Hairline Divider */
+    .gold-hairline-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin: 0.95rem auto;
+      width: 72%;
+    }
+
+    .gold-hairline-divider span.line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    }
+
+    .gold-hairline-divider span.diamond {
+      width: 5px;
+      height: 5px;
+      background-color: #D4AF37;
+      transform: rotate(45deg);
+    }
+
+    /* 24K Zari Gold Foil Typography Effect */
+    .zari-foil-text {
+      background: linear-gradient(135deg, #8B631E 0%, #C99E44 35%, #E6C67A 52%, #9C7428 75%, #C99E44 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 1px 0 rgba(255, 252, 244, 0.85));
+    }
+
+    /* Scroll Choreography & 3D Unfolding Animations */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(30px) rotateX(5deg) scale(0.975);
+    }
+
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0) rotateX(0deg) scale(1);
+    }
+
+    .stagger-item {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .revealed .stagger-item { opacity: 1; transform: translateY(0); }
+    .revealed .stagger-1 { transition-delay: 0.08s; }
+    .revealed .stagger-2 { transition-delay: 0.16s; }
+    .revealed .stagger-3 { transition-delay: 0.24s; }
+    .revealed .stagger-4 { transition-delay: 0.32s; }
+    .revealed .stagger-5 { transition-delay: 0.40s; }
+
+    @keyframes petalFall {
+      0% { transform: translateY(-30px) rotate(0deg); opacity: 0; }
+      15% { opacity: 0.88; }
+      100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+    }
+
+    .petal-particle {
+      position: fixed;
+      top: -24px;
+      pointer-events: none;
+      z-index: 45;
+      animation: petalFall linear forwards;
+    }
+  </style>
+</head>
+<body class="banarasi-brocade-bg min-h-screen relative selection:bg-gold-antique selection:text-royal-burgundy">
+
+  <!-- Top Gold Silk Thread Scroll Progress Bar -->
+  <div id="scroll-thread-track">
+    <div id="scroll-thread-bar"></div>
+  </div>
+
+  <!-- Floating Top Controls: Sitar Audio Toggle & Customize Button -->
+  <div class="fixed top-3 right-3 z-50 flex items-center gap-2">
+    <button
+      id="music-toggle-btn"
+      type="button"
+      aria-label="Toggle Classical Wedding Instrumental Music"
+      class="flex items-center gap-1.5 rounded-full bg-royal-burgundy/90 hover:bg-royal-crimson text-gold-light border border-gold-champagne px-3.5 py-2 text-[11px] font-semibold uppercase tracking-wider shadow-lg backdrop-blur-md cursor-pointer transition active:scale-95"
+    >
+      <span id="music-icon">🔇</span>
+      <span id="music-label">Music Off</span>
+    </button>
+    <button
+      id="open-customizer-btn"
+      type="button"
+      aria-label="Customize Invitation"
+      class="rounded-full bg-royal-burgundy/90 hover:bg-royal-crimson text-gold-light border border-gold-champagne px-3 py-2 text-[11px] font-semibold uppercase tracking-wider shadow-lg backdrop-blur-md cursor-pointer transition active:scale-95"
+    >
+      ✎ Edit
+    </button>
+  </div>
+
+  <!-- Primary Background Wedding Song -->
+  <audio id="bg-music" loop preload="auto" playsinline>
+    <source src="Wedding Instrumental.mp3" type="audio/mpeg" />
+    <source src="audio_59e2d1.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- =========================================================
+       1. RAJASTHAN / JAIPUR ROYAL PALACE GATE (POL) OPENING INTRO
+  ========================================================== -->
+  <div id="palace-gate-overlay" role="button" tabindex="0" aria-label="Tap to Open Royal Wedding Invitation">
+    <!-- Outer Sandstone & 24K Gold Jharokha Arch Header (Toran) -->
+    <div id="gate-jharokha-toran">
+      <svg class="w-full h-24 sm:h-28 drop-shadow-[0_10px_20px_rgba(0,0,0,0.9)]" viewBox="0 0 440 110" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="toranGold" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#8B631E" />
+            <stop offset="25%" stop-color="#F9E8B8" />
+            <stop offset="50%" stop-color="#D4AF37" />
+            <stop offset="75%" stop-color="#F9E8B8" />
+            <stop offset="100%" stop-color="#8B631E" />
+          </linearGradient>
+          <linearGradient id="toranCrimson" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#240407" />
+            <stop offset="100%" stop-color="#5B1117" />
+          </linearGradient>
+        </defs>
+        <!-- Carved Sandstone & Velvet Crimson Canopy -->
+        <path d="M0,0 L440,0 L440,54 Q385,54 360,82 Q310,46 265,78 Q220,38 175,78 Q130,46 80,82 Q55,54 0,54 Z" fill="url(#toranCrimson)" stroke="url(#toranGold)" stroke-width="3" />
+        <!-- Inner Scalloped Gold Filigree Trim -->
+        <path d="M0,46 Q55,46 80,72 Q130,38 175,68 Q220,30 265,68 Q310,38 360,72 Q385,46 440,46" fill="none" stroke="#F9E8B8" stroke-width="1.4" opacity="0.85" />
+        <!-- Hanging Gold Tassels & Auspicious Bells -->
+        <g fill="url(#toranGold)">
+          <circle cx="80" cy="87" r="4.5" /><polygon points="76,91 84,91 80,104" />
+          <circle cx="175" cy="83" r="4.5" /><polygon points="171,87 179,87 175,100" />
+          <circle cx="220" cy="52" r="6" /><polygon points="214,58 226,58 220,75" />
+          <circle cx="265" cy="83" r="4.5" /><polygon points="261,87 269,87 265,100" />
+          <circle cx="360" cy="87" r="4.5" /><polygon points="356,91 364,91 360,104" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- Left Palace Door -->
+    <div id="palace-door-left" class="palace-door">
+      <div class="center-brass-latch"></div>
+      <div class="brass-stud-row">
+        <span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span>
+      </div>
+      <div class="door-carved-panel">
+        <!-- Mughal Lotus & Paisley Lattice Overlay -->
+        <svg class="pointer-events-none absolute inset-0 w-full h-full opacity-35" preserveAspectRatio="none">
+          <defs>
+            <pattern id="door-filigree-left" width="28" height="28" patternUnits="userSpaceOnUse">
+              <path d="M14 2 L26 14 L14 26 L2 14 Z" fill="none" stroke="#E6C67A" stroke-width="0.9" />
+              <circle cx="14" cy="14" r="4" fill="none" stroke="#F9E8B8" stroke-width="0.8" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#door-filigree-left)" />
+        </svg>
+
+        <!-- Upper Scalloped Arch Inset -->
+        <div class="door-mughal-arch">
+          <svg class="w-12 h-12 text-gold-champagne/75" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M32 10 C38 22 48 26 48 36 C48 45 40 50 32 50 C24 50 16 45 16 36 C16 26 26 22 32 10 Z" />
+            <path d="M32 18 C36 26 42 30 42 37 C42 42 37 45 32 45 C27 45 22 42 22 37 C22 30 28 26 32 18 Z" />
+            <circle cx="32" cy="34" r="3" fill="currentColor" />
+          </svg>
+        </div>
+
+        <!-- Middle Brass Stud Band & Hammered Lotus Kunda Knocker -->
+        <div class="relative z-10 flex items-center justify-between px-1 py-1">
+          <span class="brass-stud"></span>
+          <div class="kunda-knocker" aria-hidden="true">
+            <div class="kunda-rosette">
+              <span class="w-2 h-2 rounded-full bg-royal-burgundy"></span>
+            </div>
+            <div class="kunda-ring"></div>
+          </div>
+          <span class="brass-stud"></span>
+        </div>
+
+        <!-- Lower Scalloped Arch Inset -->
+        <div class="door-mughal-arch">
+          <svg class="w-12 h-12 text-gold-champagne/75" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3">
+            <circle cx="32" cy="32" r="16" />
+            <path d="M32 12 L37 27 L52 32 L37 37 L32 52 L27 37 L12 32 L27 27 Z" />
+            <circle cx="32" cy="32" r="4" fill="currentColor" />
+          </svg>
+        </div>
+      </div>
+      <div class="brass-stud-row">
+        <span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span>
+      </div>
+    </div>
+
+    <!-- Right Palace Door -->
+    <div id="palace-door-right" class="palace-door">
+      <div class="center-brass-latch"></div>
+      <div class="brass-stud-row">
+        <span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span>
+      </div>
+      <div class="door-carved-panel">
+        <!-- Mughal Lotus & Paisley Lattice Overlay -->
+        <svg class="pointer-events-none absolute inset-0 w-full h-full opacity-35" preserveAspectRatio="none">
+          <defs>
+            <pattern id="door-filigree-right" width="28" height="28" patternUnits="userSpaceOnUse">
+              <path d="M14 2 L26 14 L14 26 L2 14 Z" fill="none" stroke="#E6C67A" stroke-width="0.9" />
+              <circle cx="14" cy="14" r="4" fill="none" stroke="#F9E8B8" stroke-width="0.8" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#door-filigree-right)" />
+        </svg>
+
+        <!-- Upper Scalloped Arch Inset -->
+        <div class="door-mughal-arch">
+          <svg class="w-12 h-12 text-gold-champagne/75" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M32 10 C38 22 48 26 48 36 C48 45 40 50 32 50 C24 50 16 45 16 36 C16 26 26 22 32 10 Z" />
+            <path d="M32 18 C36 26 42 30 42 37 C42 42 37 45 32 45 C27 45 22 42 22 37 C22 30 28 26 32 18 Z" />
+            <circle cx="32" cy="34" r="3" fill="currentColor" />
+          </svg>
+        </div>
+
+        <!-- Middle Brass Stud Band & Hammered Lotus Kunda Knocker -->
+        <div class="relative z-10 flex items-center justify-between px-1 py-1">
+          <span class="brass-stud"></span>
+          <div class="kunda-knocker" aria-hidden="true">
+            <div class="kunda-rosette">
+              <span class="w-2 h-2 rounded-full bg-royal-burgundy"></span>
+            </div>
+            <div class="kunda-ring"></div>
+          </div>
+          <span class="brass-stud"></span>
+        </div>
+
+        <!-- Lower Scalloped Arch Inset -->
+        <div class="door-mughal-arch">
+          <svg class="w-12 h-12 text-gold-champagne/75" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3">
+            <circle cx="32" cy="32" r="16" />
+            <path d="M32 12 L37 27 L52 32 L37 37 L32 52 L27 37 L12 32 L27 27 Z" />
+            <circle cx="32" cy="32" r="4" fill="currentColor" />
+          </svg>
+        </div>
+      </div>
+      <div class="brass-stud-row">
+        <span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span><span class="brass-stud"></span>
+      </div>
+    </div>
+
+    <!-- Multi-Layered Engraved Gold & Velvet Royal Crest Medallion -->
+    <button
+      id="gate-center-seal"
+      type="button"
+      aria-label="Tap to Open Royal Invitation"
+      class="royal-medallion-btn relative w-60 h-60 sm:w-68 sm:h-68 rounded-full bg-gradient-to-b from-royal-crimson via-royal-red to-royal-burgundy border-2 border-gold-light flex flex-col items-center justify-center px-5 text-center focus:outline-none active:scale-95"
+    >
+      <!-- Rotating Outer Filigree Ring -->
+      <svg class="pointer-events-none absolute inset-1.5 w-[calc(100%-12px)] h-[calc(100%-12px)] text-gold-champagne/75" viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="94" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3" />
+        <circle cx="100" cy="100" r="86" stroke="currentColor" stroke-width="0.9" />
+      </svg>
+
+      <span class="hindi-text text-gold-light text-sm font-bold tracking-wide">
+        ॥ शुभ विवाह ॥
+      </span>
+      <span class="text-gold-champagne text-base my-0.5 leading-none">卐</span>
+      <span id="gate-monogram" class="font-cinzel text-xs font-extrabold text-gold-champagne tracking-[0.28em] uppercase">
+        K &amp; S
+      </span>
+      <span id="gate-couple-names" class="font-cinzel text-lg sm:text-xl font-bold text-gold-light tracking-[0.12em] uppercase mt-1 leading-tight">
+        Kajal &amp; Siddhant
+      </span>
+      <span class="w-20 h-px bg-gradient-to-r from-transparent via-gold-light to-transparent my-2"></span>
+      <span class="rounded-full bg-gradient-to-r from-gold-light via-silk-ivory to-gold-light text-royal-burgundy border border-gold-antique font-cinzel text-[10px] font-extrabold uppercase tracking-[0.2em] px-4 py-1.5 shadow-md">
+        Tap to Open
+      </span>
+    </button>
+  </div>
+
+  <!-- =========================================================
+       2. MAIN MOBILE-FIRST ROYAL WEDDING INVITATION SUITE
+  ========================================================== -->
+  <main id="invitation-content" class="mobile-card-shell hidden relative z-10 px-3 pt-14 pb-16 space-y-9">
+
+    <!-- =========================================================
+         CARD 1: HERO (SHAHJAHANI SCALLOPED ARCH + GANESH INVOCATION)
+    ========================================================== -->
+    <section class="mughal-jali-card reveal-on-scroll">
+      <!-- 24K Gold Geometric Jali Lattice Outer Frame -->
+      <svg class="pointer-events-none absolute inset-0 w-full h-full" preserveAspectRatio="none">
+        <defs>
+          <pattern id="jali-hero" width="28" height="28" patternUnits="userSpaceOnUse">
+            <circle cx="14" cy="14" r="9.5" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.65" />
+            <circle cx="0" cy="0" r="9.5" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.65" />
+            <circle cx="28" cy="0" r="9.5" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.65" />
+            <circle cx="0" cy="28" r="9.5" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.65" />
+            <circle cx="28" cy="28" r="9.5" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.65" />
+            <path d="M14 2 L26 14 L14 26 L2 14 Z" fill="none" stroke="#F9E8B8" stroke-width="0.65" opacity="0.5" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#jali-hero)" />
+      </svg>
+
+      <!-- Fine Gold-Foil Paisley Corner Filigree -->
+      <svg class="pointer-events-none absolute top-2.5 left-2.5 w-8 h-8 text-gold-light/85" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M3 20 C3 9 9 3 20 3 M3 13 C3 7 7 3 13 3" />
+        <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+      </svg>
+      <svg class="pointer-events-none absolute top-2.5 right-2.5 w-8 h-8 text-gold-light/85 scale-x-[-1]" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M3 20 C3 9 9 3 20 3 M3 13 C3 7 7 3 13 3" />
+        <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+      </svg>
+
+      <div class="alabaster-arch-panel arch-shahjahani relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
+        <!-- Sacred Ganesh Invocation -->
+        <div class="stagger-item stagger-1 mx-auto mb-2 flex flex-col items-center">
+          <p class="hindi-text text-royal-crimson font-bold text-base">
+            ॐ श्री गणेशाय नमः
+          </p>
+          <p class="hindi-text text-royal-burgundy/90 font-medium text-[11px] leading-relaxed mt-1 px-2">
+            वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br />
+            निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
+          </p>
+          <p class="hindi-text zari-foil-text font-bold text-xs mt-1.5">
+            ॥ शुभ विवाह ॥
+          </p>
+        </div>
+
+        <div class="gold-hairline-divider stagger-item stagger-1">
+          <span class="line"></span>
+          <span class="diamond"></span>
+          <span class="line"></span>
+        </div>
+
+        <p class="stagger-item stagger-2 font-serif italic text-base text-royal-burgundy/90 leading-snug">
+          Together with their families
+        </p>
+
+        <!-- Couple Names -->
+        <div class="stagger-item stagger-3 my-3.5">
+          <h1 id="hero-bride-name" class="font-cinzel text-3xl font-bold text-royal-crimson tracking-[0.14em] uppercase">
+            Kajal
+          </h1>
+          <div class="flex items-center justify-center gap-3 my-1">
+            <span class="h-px w-10 bg-gradient-to-r from-transparent to-gold-antique"></span>
+            <span class="zari-foil-text font-serif italic text-2xl font-bold">&amp;</span>
+            <span class="h-px w-10 bg-gradient-to-l from-transparent to-gold-antique"></span>
+          </div>
+          <h1 id="hero-groom-name" class="font-cinzel text-3xl font-bold text-royal-crimson tracking-[0.14em] uppercase">
+            Siddhant
+          </h1>
+        </div>
+
+        <p class="stagger-item stagger-3 font-serif italic text-base text-royal-burgundy leading-relaxed px-2">
+          Request the honour of your presence at their Wedding Celebrations
+        </p>
+
+        <!-- Wedding Date & Main Venue Pill -->
+        <div class="stagger-item stagger-4 mx-auto mt-4 rounded-2xl bg-gradient-to-r from-royal-burgundy via-royal-red to-royal-burgundy border border-gold-champagne px-4 py-3 text-silk-ivory shadow-md">
+          <p id="hero-wedding-date" class="font-cinzel text-xs font-semibold text-gold-light tracking-[0.12em] uppercase">
+            12th December 2026
+          </p>
+          <p class="font-serif italic text-base text-silk-cream mt-0.5">
+            Varanasi, Uttar Pradesh
+          </p>
+        </div>
+
+        <!-- Live Countdown Timer -->
+        <div class="stagger-item stagger-5 mt-4 grid grid-cols-4 gap-1.5 mx-auto">
+          <div class="rounded-xl bg-royal-red/[0.05] border border-gold-antique/60 py-2 px-1">
+            <span id="cd-days" class="block font-cinzel text-base font-bold text-royal-crimson">00</span>
+            <span class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Days</span>
+          </div>
+          <div class="rounded-xl bg-royal-red/[0.05] border border-gold-antique/60 py-2 px-1">
+            <span id="cd-hours" class="block font-cinzel text-base font-bold text-royal-crimson">00</span>
+            <span class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Hours</span>
+          </div>
+          <div class="rounded-xl bg-royal-red/[0.05] border border-gold-antique/60 py-2 px-1">
+            <span id="cd-mins" class="block font-cinzel text-base font-bold text-royal-crimson">00</span>
+            <span class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Mins</span>
+          </div>
+          <div class="rounded-xl bg-royal-red/[0.05] border border-gold-antique/60 py-2 px-1">
+            <span id="cd-secs" class="block font-cinzel text-base font-bold text-royal-crimson">00</span>
+            <span class="text-[8px] uppercase tracking-[0.16em] text-royal-burgundy/80">Secs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CARD 2: PARENTAL BLESSINGS (CUSPED LOTUS-DOME ARCH)
+    ========================================================== -->
+    <section class="mughal-jali-card reveal-on-scroll">
+      <svg class="pointer-events-none absolute inset-0 w-full h-full" preserveAspectRatio="none">
+        <defs>
+          <pattern id="jali-family" width="26" height="26" patternUnits="userSpaceOnUse">
+            <path d="M13 0 L26 13 L13 26 L0 13 Z" fill="none" stroke="#D4AF37" stroke-width="0.95" opacity="0.62" />
+            <circle cx="13" cy="13" r="4" fill="none" stroke="#F9E8B8" stroke-width="0.7" opacity="0.5" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#jali-family)" />
+      </svg>
+
+      <div class="alabaster-arch-panel arch-lotus-dome relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
+        <p class="stagger-item stagger-1 hindi-text text-royal-crimson font-bold text-sm mb-2">
+          ॥ मंगलम् भगवान विष्णुः ॥
+        </p>
+
+        <div class="gold-hairline-divider stagger-item stagger-1">
+          <span class="line"></span>
+          <span class="diamond"></span>
+          <span class="line"></span>
+        </div>
+
+        <p class="stagger-item stagger-2 font-serif italic text-base text-royal-burgundy leading-relaxed">
+          With the divine blessings of the Almighty, the families of
+        </p>
+
+        <!-- Bride's Parents Block -->
+        <div class="stagger-item stagger-3 my-4 py-3.5 px-4 rounded-2xl bg-royal-red/[0.04] border border-gold-antique/55">
+          <h3 id="family-bride-name" class="font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.12em] uppercase">
+            Kajal
+          </h3>
+          <p class="font-serif italic text-sm text-royal-red mt-0.5">Beloved Daughter of</p>
+          <p id="family-bride-parents" class="font-serif font-bold text-lg text-royal-burgundy mt-0.5">
+            Smt. Mithilesh &amp; Shree Santosh Singh
+          </p>
+        </div>
+
+        <div class="flex items-center justify-center gap-2.5 my-1">
+          <span class="h-px w-10 bg-gold-antique/65"></span>
+          <span class="text-[10px] uppercase tracking-[0.28em] text-gold-deep font-bold">With</span>
+          <span class="h-px w-10 bg-gold-antique/65"></span>
+        </div>
+
+        <!-- Groom's Parents Block -->
+        <div class="stagger-item stagger-4 mt-4 py-3.5 px-4 rounded-2xl bg-royal-red/[0.04] border border-gold-antique/55">
+          <h3 id="family-groom-name" class="font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.12em] uppercase">
+            Siddhant
+          </h3>
+          <p class="font-serif italic text-sm text-royal-red mt-0.5">Beloved Son of</p>
+          <p id="family-groom-parents" class="font-serif font-bold text-lg text-royal-burgundy mt-0.5">
+            Smt. Suman &amp; Shree Uttam Singh
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CARD 3: AUSPICIOUS CEREMONIES (4 CLEAN MUGHAL ARCH CARDS)
+    ========================================================== -->
+    <section class="space-y-9 reveal-on-scroll">
+      <div class="text-center pb-0.5">
+        <p class="hindi-text text-gold-light text-sm font-medium">
+          ॥ मांगलिक कार्यक्रम • काशी ॥
+        </p>
+        <h2 class="font-cinzel text-2xl font-semibold text-gold-light tracking-[0.12em] uppercase mt-1">
+          Wedding Ceremonies
+        </h2>
+        <div class="w-24 h-px bg-gradient-to-r from-transparent via-gold-champagne to-transparent mx-auto mt-2.5"></div>
+      </div>
+
+      <!-- CARD 3A: Tilak & Ring Ceremony -->
+      <article class="mughal-jali-card reveal-on-scroll">
+        <svg class="pointer-events-none absolute inset-0 w-full h-full" preserveAspectRatio="none">
+          <defs>
+            <pattern id="jali-ev1" width="24" height="24" patternUnits="userSpaceOnUse">
+              <rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="#D4AF37" stroke-width="0.95" opacity="0.6" />
+              <circle cx="12" cy="12" r="1.8" fill="#F9E8B8" opacity="0.45" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#jali-ev1)" />
+        </svg>
+
+        <div class="alabaster-arch-panel arch-temple-toran relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
+          <span class="stagger-item stagger-1 inline-block rounded-full bg-royal-crimson text-gold-light text-[9px] font-semibold uppercase tracking-[0.22em] px-4 py-1 mb-3">
+            Shagun &amp; Ring Exchange
+          </span>
+          <h3 class="stagger-item stagger-2 font-cinzel text-xl font-bold text-royal-burgundy tracking-[0.08em]">
+            Tilak &amp; Ring Ceremony
+          </h3>
+          <p class="stagger-item stagger-3 font-serif text-lg font-bold text-royal-crimson mt-1.5">
+            5th December 2026
+          </p>
+          <p class="stagger-item stagger-3 text-[11px] uppercase tracking-[0.16em] font-semibold text-gold-deep mt-1">
+            5:00 PM Onwards
+          </p>
+
+          <div class="gold-hairline-divider stagger-item stagger-4">
+            <span class="line"></span>
+            <span class="diamond"></span>
+            <span class="line"></span>
+          </div>
+
+          <p class="stagger-item stagger-4 font-serif text-lg text-royal-burgundy font-bold">
+            Sanzha Chulha
+          </p>
+          <p class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
+            Varanasi, Uttar Pradesh
+          </p>
+          <div class="stagger-item stagger-5 mt-5">
+            <a
+              href="https://maps.app.goo.gl/meRfGozh1z79QPWo6?g_st=ac"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full bg-royal-crimson hover:bg-royal-red active:scale-95 text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] shadow transition"
+            >
+              <span>View on Google Maps</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3B: Haldi & Mehendi -->
+      <article class="mughal-jali-card reveal-on-scroll">
+        <svg class="pointer-events-none absolute inset-0 w-full h-full" preserveAspectRatio="none">
+          <defs>
+            <pattern id="jali-ev2" width="28" height="28" patternUnits="userSpaceOnUse">
+              <circle cx="14" cy="14" r="8.5" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.62" />
+              <path d="M14 4 L14 24 M4 14 L24 14" stroke="#F9E8B8" stroke-width="0.5" opacity="0.38" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#jali-ev2)" />
+        </svg>
+
+        <div class="alabaster-arch-panel arch-mandap-scallop relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
+          <span class="stagger-item stagger-1 inline-block rounded-full bg-marigold-rich text-silk-ivory text-[9px] font-semibold uppercase tracking-[0.22em] px-4 py-1 mb-3">
+            Colors of Joy &amp; Henna
+          </span>
+          <h3 class="stagger-item stagger-2 font-cinzel text-xl font-bold text-royal-burgundy tracking-[0.08em]">
+            Haldi &amp; Mehendi
+          </h3>
+          <p class="stagger-item stagger-3 font-serif text-lg font-bold text-royal-crimson mt-1.5">
+            10th December 2026
+          </p>
+          <div class="stagger-item stagger-3 mt-1.5 space-y-0.5 text-[11px] uppercase tracking-[0.14em] font-semibold text-gold-deep">
+            <p>Haldi Ceremony: 10:00 AM</p>
+            <p>Mehendi Night: 6:00 PM</p>
+          </div>
+
+          <div class="gold-hairline-divider stagger-item stagger-4">
+            <span class="line"></span>
+            <span class="diamond"></span>
+            <span class="line"></span>
+          </div>
+
+          <p class="stagger-item stagger-4 font-serif text-lg text-royal-burgundy font-bold">
+            Ancestral House, Kumbhapur
+          </p>
+          <p class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
+            Kundi, Varanasi, Uttar Pradesh
+          </p>
+          <div class="stagger-item stagger-5 mt-5">
+            <a
+              href="https://maps.app.goo.gl/gi9TtjtXMbw3nkEw5?g_st=ac"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full bg-royal-crimson hover:bg-royal-red active:scale-95 text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] shadow transition"
+            >
+              <span>View on Google Maps</span>
+            </a>
+          </div>
+        </div>
+      </article>
+      <!-- CARD 3C: Shubh Vivah / Wedding -->
+      <article class="mughal-jali-card reveal-on-scroll">
+        <svg class="pointer-events-none absolute inset-0 w-full h-full" preserveAspectRatio="none">
+          <defs>
+            <pattern id="jali-ev3" width="28" height="28" patternUnits="userSpaceOnUse">
+              <circle cx="14" cy="14" r="9.5" fill="none" stroke="#D4AF37" stroke-width="1.05" opacity="0.68" />
+              <path d="M14 2 L26 14 L14 26 L2 14 Z" fill="none" stroke="#F9E8B8" stroke-width="0.7" opacity="0.55" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#jali-ev3)" />
+        </svg>
+
+        <div class="alabaster-arch-panel arch-doli-pavilion relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
+          <span class="stagger-item stagger-1 inline-block rounded-full bg-gradient-to-r from-royal-burgundy via-royal-crimson to-royal-burgundy text-gold-light border border-gold-champagne text-[9px] font-semibold uppercase tracking-[0.18em] px-4 py-1 mb-3 shadow">
+            Sacred Union • Panigrahan
+          </span>
+          <h3 class="stagger-item stagger-2 font-cinzel text-2xl font-bold text-royal-crimson tracking-[0.1em]">
+            Shubh Vivah
+          </h3>
+          <p class="stagger-item stagger-3 font-serif text-xl font-bold text-royal-burgundy mt-1.5">
+            12th December 2026
+          </p>
+          <div class="stagger-item stagger-3 mt-1.5 space-y-0.5 text-[11px] uppercase tracking-[0.14em] font-semibold text-gold-deep">
+            <p>Baraat Swagat: 7:00 PM</p>
+            <p>Vivah Sanskar: Auspicious Night</p>
+          </div>
+
+          <div class="gold-hairline-divider stagger-item stagger-4">
+            <span class="line"></span>
+            <span class="diamond"></span>
+            <span class="line"></span>
+          </div>
+
+          <p class="stagger-item stagger-4 font-serif text-xl text-royal-burgundy font-bold">
+            KPS Resort
+          </p>
+          <p class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
+            Mangari, Babatpur, Varanasi, Uttar Pradesh
+          </p>
+          <div class="stagger-item stagger-5 mt-5">
+            <a
+              href="https://maps.app.goo.gl/FB4LvXZoHPpXd6ax5?g_st=ac"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-royal-burgundy via-royal-crimson to-royal-burgundy text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] shadow-md active:scale-95 transition"
+            >
+              <span>View on Google Maps</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3D: Vidayi Ceremony -->
+      <article class="mughal-jali-card reveal-on-scroll">
+        <svg class="pointer-events-none absolute inset-0 w-full h-full" preserveAspectRatio="none">
+          <defs>
+            <pattern id="jali-ev4" width="32" height="32" patternUnits="userSpaceOnUse">
+              <path d="M16 0 L32 16 L16 32 L0 16 Z" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.62" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#jali-ev4)" />
+        </svg>
+
+        <div class="alabaster-arch-panel arch-sunset-mehrab relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
+          <span class="stagger-item stagger-1 inline-block rounded-full bg-royal-burgundy text-gold-light text-[9px] font-semibold uppercase tracking-[0.22em] px-4 py-1 mb-3">
+            Blessings &amp; Farewell
+          </span>
+          <h3 class="stagger-item stagger-2 font-cinzel text-xl font-bold text-royal-burgundy tracking-[0.08em]">
+            Vidayi Ceremony
+          </h3>
+          <p class="stagger-item stagger-3 font-serif text-lg font-bold text-royal-crimson mt-1.5">
+            14th December 2026
+          </p>
+          <p class="stagger-item stagger-3 text-[11px] uppercase tracking-[0.16em] font-semibold text-gold-deep mt-1">
+            Morning
+          </p>
+
+          <div class="gold-hairline-divider stagger-item stagger-4">
+            <span class="line"></span>
+            <span class="diamond"></span>
+            <span class="line"></span>
+          </div>
+
+          <p class="stagger-item stagger-4 font-serif text-lg text-royal-burgundy font-bold">
+            Ancestral House, Kumbhapur
+          </p>
+          <p class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
+            Kundi, Varanasi, Uttar Pradesh
+          </p>
+          <div class="stagger-item stagger-5 mt-5">
+            <a
+              href="https://maps.app.goo.gl/gi9TtjtXMbw3nkEw5?g_st=ac"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full bg-royal-crimson hover:bg-royal-red active:scale-95 text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] shadow transition"
+            >
+              <span>View on Google Maps</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- =========================================================
+         CARD 4: GRANDPARENTS CLOSING BLESSINGS (OCTAGONAL MEDALLION ARCH)
+    ========================================================== -->
+    <section class="mughal-jali-card reveal-on-scroll">
+      <svg class="pointer-events-none absolute inset-0 w-full h-full" preserveAspectRatio="none">
+        <defs>
+          <pattern id="jali-closing" width="28" height="28" patternUnits="userSpaceOnUse">
+            <circle cx="14" cy="14" r="9.5" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.65" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#jali-closing)" />
+      </svg>
+
+      <div class="alabaster-arch-panel arch-octagonal-crest relative z-10 mx-auto w-full pt-12 pb-10 px-5 text-center">
+        <p class="stagger-item stagger-1 hindi-text text-royal-crimson font-bold text-sm mb-1.5">
+          ॥ स्नेह एवं आशीर्वाद ॥
+        </p>
+        <h2 class="stagger-item stagger-2 font-cinzel text-sm font-bold text-royal-burgundy tracking-[0.14em] uppercase">
+          With Best Compliments &amp; Blessings From
+        </h2>
+
+        <div class="gold-hairline-divider stagger-item stagger-2">
+          <span class="line"></span>
+          <span class="diamond"></span>
+          <span class="line"></span>
+        </div>
+
+        <p id="closing-elders-names" class="stagger-item stagger-3 font-serif text-xl font-bold text-royal-crimson leading-snug">
+          Grandfather Shree Mangala Prasad Singh &amp; Grandmother Smt. Jadavati Devi
+        </p>
+        <p class="stagger-item stagger-4 font-serif italic text-base text-royal-burgundy/90 mt-1.5">
+          And Entire Singh Family • Varanasi
+        </p>
+
+        <p class="stagger-item stagger-4 font-serif italic text-base text-royal-burgundy mt-3.5 leading-relaxed">
+          “Your presence and heartfelt blessings will make our sacred union truly unforgettable.”
+        </p>
+
+        <!-- Action Buttons: Add to Calendar & Share on WhatsApp -->
+        <div class="stagger-item stagger-5 mt-5 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+          <button
+            id="download-ics-btn"
+            type="button"
+            class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-silk-ivory hover:bg-silk-cream active:scale-95 text-royal-burgundy border border-gold-antique px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] shadow-sm transition cursor-pointer"
+          >
+            <span>Add to Calendar</span>
+          </button>
+          <a
+            id="whatsapp-share-btn"
+            href="https://wa.me/?text=%E0%A5%90%20%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%97%E0%A4%A3%E0%A5%87%E0%A4%B6%E0%A4%BE%E0%A4%AF%20%E0%A4%A8%E0%A4%AE%E0%A4%83%20%E2%80%94%20You%20are%20cordially%20invited%20to%20the%20Royal%20Wedding%20of%20Kajal%20%26%20Siddhant%20on%2012th%20December%202026%20at%20KPS%20Resort%2C%20Mangari%2C%20Babatpur%2C%20Varanasi."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-royal-crimson hover:bg-royal-red active:scale-95 text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] shadow-md transition"
+          >
+            <span>Share on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       3. LIVE CUSTOMIZER MODAL
+  ========================================================== -->
+  <div id="customizer-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 p-4 backdrop-blur-sm">
+    <div class="w-full max-w-md rounded-3xl bg-silk-ivory border-2 border-gold-antique p-6 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-gold-antique/40 pb-3 mb-4">
+        <h3 class="font-cinzel text-lg font-bold text-royal-burgundy">Customize Invitation</h3>
+        <button id="close-customizer-btn" type="button" class="text-royal-burgundy hover:text-royal-crimson text-xl font-bold cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-3 text-left">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-royal-burgundy mb-1">Bride's Name</label>
+            <input id="edit-bride" type="text" value="Kajal" class="w-full rounded-xl border border-gold-antique/60 bg-white px-3 py-2 text-royal-burgundy" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-royal-burgundy mb-1">Groom's Name</label>
+            <input id="edit-groom" type="text" value="Siddhant" class="w-full rounded-xl border border-gold-antique/60 bg-white px-3 py-2 text-royal-burgundy" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-royal-burgundy mb-1">Wedding Date Text</label>
+          <input id="edit-date" type="text" value="12th December 2026" class="w-full rounded-xl border border-gold-antique/60 bg-white px-3 py-2 text-royal-burgundy" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-royal-burgundy mb-1">Eldest Grandparents</label>
+          <input id="edit-elders" type="text" value="Grandfather Shree Mangala Prasad Singh & Grandmother Smt. Jadavati Devi" class="w-full rounded-xl border border-gold-antique/60 bg-white px-3 py-2 text-royal-burgundy" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-royal-burgundy mb-1">Custom Wedding Song (.MP3)</label>
+          <input id="edit-audio-file" type="file" accept="audio/*" class="w-full rounded-xl border border-gold-antique/60 bg-white px-3 py-1.5 text-xs text-royal-burgundy file:mr-3 file:rounded-full file:border-0 file:bg-royal-crimson file:px-3 file:py-1 file:text-[11px] file:font-semibold file:text-gold-light" />
+        </div>
+      </div>
+
+      <div class="mt-5 flex justify-end gap-2">
+        <button id="save-customizer-btn" type="button" class="rounded-full bg-royal-crimson text-gold-light border border-gold-antique px-5 py-2 text-xs font-bold uppercase tracking-wider cursor-pointer">
+          Apply Changes
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       4. COMPLETE INTERACTIVE ENGINE (PALACE GATE, SCROLL, AUDIO)
+  ========================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const state = {
+        bride: 'Kajal',
+        groom: 'Siddhant',
+        dateText: '12th December 2026',
+        elders: 'Grandfather Shree Mangala Prasad Singh & Grandmother Smt. Jadavati Devi'
+      };
+
+      // =========================================================
+      // MULTI-VOICE INDIAN WEDDING BANSURI, SITAR & TANPURA ENGINE
+      // + SEAMLESS CUSTOM MP3 FILE UPLOAD SUPPORT
+      // =========================================================
+      let audioCtx = null;
+      let isPlaying = false;
+      let useCustomMp3 = false;
+      let musicSchedulerTimer = null;
+      let droneNodes = null;
+      let melodyStep = 0;
+
+      const bgMusic = document.getElementById('bg-music');
+      const musicBtn = document.getElementById('music-toggle-btn');
+      const musicIcon = document.getElementById('music-icon');
+      const musicLabel = document.getElementById('music-label');
+      const editAudioInput = document.getElementById('edit-audio-file');
+
+      // Raag Yaman Kalyan / Wedding Flute & Sitar Phrase Pattern (in Hz, Sa = D4 / 293.66Hz)
+      const weddingPhrases = [
+        // Bar 1: Expressive Bansuri Flute opening
+        { flute: 440.00, sitar: 293.66, chord: [293.66, 369.99, 440.00] }, // Pa / Sa
+        { flute: 493.88, sitar: 369.99, chord: null },                     // Dha / Ga
+        { flute: 554.37, sitar: 440.00, chord: null },                     // Ni / Pa
+        { flute: 587.33, sitar: 554.37, chord: [329.63, 415.30, 493.88] }, // Sa' / Ni
+        { flute: 554.37, sitar: 440.00, chord: null },                     // Ni / Pa
+        { flute: 493.88, sitar: 369.99, chord: null },                     // Dha / Ga
+        // Bar 2: Romantic Sitar & Flute interplay
+        { flute: 440.00, sitar: 587.33, chord: [293.66, 369.99, 440.00] }, // Pa / Sa'
+        { flute: 415.30, sitar: 493.88, chord: null },                     // Ma# / Dha
+        { flute: 369.99, sitar: 440.00, chord: null },                     // Ga / Pa
+        { flute: 329.63, sitar: 369.99, chord: [246.94, 293.66, 369.99] }, // Re / Ga
+        { flute: 369.99, sitar: 329.63, chord: null },                     // Ga / Re
+        { flute: 293.66, sitar: 293.66, chord: null }                      // Sa / Sa
+      ];
+
+      function ensureAudioContext() {
+        if (!audioCtx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContextClass) return null;
+          audioCtx = new AudioContextClass();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume().catch(() => {});
+        }
+        return audioCtx;
+      }
+
+      if (editAudioInput && bgMusic) {
+        editAudioInput.addEventListener('change', (e) => {
+          const file = e.target.files && e.target.files[0];
+          if (!file) return;
+          stopSynthEngine();
+          const objectUrl = URL.createObjectURL(file);
+          bgMusic.src = objectUrl;
+          bgMusic.load();
+          useCustomMp3 = true;
+          startMusic();
+        });
+      }
+
+      function playTempleChime(freq = 587.33) {
+        try {
+          const ctx = ensureAudioContext();
+          if (!ctx) return;
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const overtone = ctx.createOscillator();
+          const gain = ctx.createGain();
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+          overtone.type = 'triangle';
+          overtone.frequency.setValueAtTime(freq * 2.756, now);
+
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.exponentialRampToValueAtTime(0.055, now + 0.03);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.9);
+
+          osc.connect(gain);
+          overtone.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc.start(now);
+          overtone.start(now);
+          osc.stop(now + 2.0);
+          overtone.stop(now + 2.0);
+        } catch (err) {
+          // Safe fallback
+        }
+      }
+
+      function startTanpuraDrone(ctx) {
+        if (droneNodes) return;
+        try {
+          const masterDrone = ctx.createGain();
+          masterDrone.gain.setValueAtTime(0.001, ctx.currentTime);
+          masterDrone.gain.exponentialRampToValueAtTime(0.028, ctx.currentTime + 1.5);
+          masterDrone.connect(ctx.destination);
+
+          // D3 (146.83 Hz) Sa & A3 (220.00 Hz) Pa warm Tanpura drone
+          const freqs = [146.83, 220.00, 293.66];
+          const oscs = freqs.map((f, idx) => {
+            const osc = ctx.createOscillator();
+            const filter = ctx.createBiquadFilter();
+            osc.type = idx === 0 ? 'triangle' : 'sine';
+            osc.frequency.setValueAtTime(f, ctx.currentTime);
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(520, ctx.currentTime);
+            osc.connect(filter);
+            filter.connect(masterDrone);
+            osc.start();
+            return osc;
+          });
+          droneNodes = { masterDrone, oscs };
+        } catch (err) {
+          // Safe fallback
+        }
+      }
+
+      function stopTanpuraDrone() {
+        if (!droneNodes) return;
+        try {
+          droneNodes.oscs.forEach((o) => {
+            try { o.stop(); } catch (e) {}
+          });
+          droneNodes.masterDrone.disconnect();
+        } catch (err) {}
+        droneNodes = null;
+      }
+
+      function triggerBansuriFluteNote(ctx, freq, duration = 0.68) {
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const subOsc = ctx.createOscillator();
+        const vibrato = ctx.createOscillator();
+        const vibratoGain = ctx.createGain();
+        const filter = ctx.createBiquadFilter();
+        const env = ctx.createGain();
+
+        // Warm breathy Bansuri timbre
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq * 0.985, now);
+        osc.frequency.exponentialRampToValueAtTime(freq, now + 0.08);
+
+        subOsc.type = 'triangle';
+        subOsc.frequency.setValueAtTime(freq, now);
+
+        // Gentle meend / vibrato
+        vibrato.type = 'sine';
+        vibrato.frequency.setValueAtTime(5.2, now);
+        vibratoGain.gain.setValueAtTime(2.8, now);
+        vibrato.connect(vibratoGain);
+        vibratoGain.connect(osc.frequency);
+
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(1450, now);
+
+        env.gain.setValueAtTime(0.0008, now);
+        env.gain.exponentialRampToValueAtTime(0.055, now + 0.11);
+        env.gain.exponentialRampToValueAtTime(0.038, now + duration * 0.65);
+        env.gain.exponentialRampToValueAtTime(0.0005, now + duration);
+
+        osc.connect(filter);
+        subOsc.connect(filter);
+        filter.connect(env);
+        env.connect(ctx.destination);
+
+        osc.start(now);
+        subOsc.start(now);
+        vibrato.start(now);
+        osc.stop(now + duration + 0.05);
+        subOsc.stop(now + duration + 0.05);
+        vibrato.stop(now + duration + 0.05);
+      }
+
+      function triggerSitarSantoorPluck(ctx, freq) {
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const harmonic = ctx.createOscillator();
+        const filter = ctx.createBiquadFilter();
+        const env = ctx.createGain();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(freq, now);
+
+        harmonic.type = 'triangle';
+        harmonic.frequency.setValueAtTime(freq * 2, now);
+
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(freq * 2.2, now);
+        filter.Q.setValueAtTime(2.6, now);
+
+        env.gain.setValueAtTime(0.0008, now);
+        env.gain.exponentialRampToValueAtTime(0.036, now + 0.018);
+        env.gain.exponentialRampToValueAtTime(0.0004, now + 0.85);
+
+        osc.connect(filter);
+        harmonic.connect(filter);
+        filter.connect(env);
+        env.connect(ctx.destination);
+
+        osc.start(now);
+        harmonic.start(now);
+        osc.stop(now + 0.9);
+        harmonic.stop(now + 0.9);
+      }
+
+      function triggerWarmPadChord(ctx, freqs) {
+        if (!freqs) return;
+        const now = ctx.currentTime;
+        freqs.forEach((f) => {
+          const osc = ctx.createOscillator();
+          const env = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(f * 0.5, now);
+
+          env.gain.setValueAtTime(0.0005, now);
+          env.gain.exponentialRampToValueAtTime(0.018, now + 0.35);
+          env.gain.exponentialRampToValueAtTime(0.0004, now + 2.1);
+
+          osc.connect(env);
+          env.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 2.2);
+        });
+      }
+
+      function startSynthEngine() {
+        const ctx = ensureAudioContext();
+        if (!ctx) return;
+        stopSynthEngine();
+        startTanpuraDrone(ctx);
+
+        const playStep = () => {
+          if (!isPlaying || useCustomMp3) return;
+          const step = weddingPhrases[melodyStep % weddingPhrases.length];
+          triggerBansuriFluteNote(ctx, step.flute, 0.68);
+          triggerSitarSantoorPluck(ctx, step.sitar);
+          if (step.chord) {
+            triggerWarmPadChord(ctx, step.chord);
+          }
+          melodyStep++;
+        };
+
+        playStep();
+        musicSchedulerTimer = setInterval(playStep, 640);
+      }
+
+      function stopSynthEngine() {
+        if (musicSchedulerTimer) {
+          clearInterval(musicSchedulerTimer);
+          musicSchedulerTimer = null;
+        }
+        stopTanpuraDrone();
+      }
+
+      function startMusic() {
+        isPlaying = true;
+        musicIcon.textContent = '🔊';
+        musicLabel.textContent = 'Music On';
+
+        if (useCustomMp3 && bgMusic && bgMusic.src) {
+          bgMusic.muted = false;
+          bgMusic.volume = 0.85;
+          const playPromise = bgMusic.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              // Fallback gracefully to Web Audio Bansuri & Sitar if custom MP3 fails
+              useCustomMp3 = false;
+              startSynthEngine();
+            });
+          }
+        } else {
+          startSynthEngine();
+        }
+      }
+
+      function stopMusic() {
+        isPlaying = false;
+        stopSynthEngine();
+        if (bgMusic) {
+          try {
+            bgMusic.pause();
+          } catch (err) {
+            // Safe fallback
+          }
+        }
+        musicIcon.textContent = '🔇';
+        musicLabel.textContent = 'Music Off';
+      }
+
+      musicBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          stopMusic();
+        } else {
+          startMusic();
+        }
+      });
+
+      // =========================================================
+      // RAJASTHAN ROYAL PALACE GATE (POL) SLIDING DOOR REVEAL
+      // =========================================================
+      const gateOverlay = document.getElementById('palace-gate-overlay');
+      const gateCenterSeal = document.getElementById('gate-center-seal');
+      const doorLeft = document.getElementById('palace-door-left');
+      const doorRight = document.getElementById('palace-door-right');
+      const invitationContent = document.getElementById('invitation-content');
+      const revealEls = document.querySelectorAll('.reveal-on-scroll');
+      const scrollThreadBar = document.getElementById('scroll-thread-bar');
+      let gatesOpened = false;
+
+      function launchPetals(count = 22) {
+        const colors = ['#D4AF37', '#E6C67A', '#5B1117', '#F9E8B8'];
+        for (let i = 0; i < count; i++) {
+          const petal = document.createElement('div');
+          petal.className = 'petal-particle';
+          const size = 8 + Math.random() * 7;
+          petal.style.width = `${size}px`;
+          petal.style.height = `${size * 0.72}px`;
+          petal.style.left = `${Math.random() * 100}vw`;
+          petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          petal.style.borderRadius = '65% 35% 65% 35%';
+          petal.style.animationDuration = `${4.8 + Math.random() * 3.8}s`;
+          petal.style.animationDelay = `${Math.random() * 1.2}s`;
+          document.body.appendChild(petal);
+          setTimeout(() => petal.remove(), 9200);
+        }
+      }
+
+      function openRoyalPalaceGates(e) {
+        if (e && e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+        if (gatesOpened) return;
+        gatesOpened = true;
+
+        invitationContent.classList.remove('hidden');
+        gateOverlay.classList.add('gates-open');
+
+        playTempleChime(587.33);
+        startMusic();
+        launchPetals(24);
+
+        requestAnimationFrame(() => {
+          updateScrollEffects();
+        });
+
+        setTimeout(() => {
+          gateOverlay.classList.add('gate-hidden');
+        }, 1550);
+      }
+
+      gateOverlay.addEventListener('click', openRoyalPalaceGates);
+      gateOverlay.addEventListener('keydown', openRoyalPalaceGates);
+      gateCenterSeal.addEventListener('click', openRoyalPalaceGates);
+      doorLeft.addEventListener('click', openRoyalPalaceGates);
+      doorRight.addEventListener('click', openRoyalPalaceGates);
+
+      // =========================================================
+      // SCROLL CHOREOGRAPHY & PROGRESS BAR
+      // =========================================================
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+            }
+          });
+        }, { threshold: 0.12 });
+
+        revealEls.forEach((el) => observer.observe(el));
+      }
+
+      let scrollTicking = false;
+      function updateScrollEffects() {
+        const vh = window.innerHeight;
+        const currentScrollY = window.scrollY;
+        const docHeight = Math.max(1, document.documentElement.scrollHeight - vh);
+        const scrollRatio = Math.min(1, Math.max(0, currentScrollY / docHeight));
+
+        if (scrollThreadBar) {
+          scrollThreadBar.style.width = `${(scrollRatio * 100).toFixed(1)}%`;
+        }
+
+        const triggerBottom = vh * 0.92;
+        revealEls.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < triggerBottom) {
+            el.classList.add('revealed');
+          }
+        });
+
+        scrollTicking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(updateScrollEffects);
+          scrollTicking = true;
+        }
+      }, { passive: true });
+
+      window.addEventListener('resize', updateScrollEffects, { passive: true });
+
+      // =========================================================
+      // LIVE COUNTDOWN TO 12TH DECEMBER 2026
+      // =========================================================
+      const targetWeddingDate = new Date('2026-12-12T19:00:00+05:30').getTime();
+
+      function updateCountdown() {
+        const daysEl = document.getElementById('cd-days');
+        const hoursEl = document.getElementById('cd-hours');
+        const minsEl = document.getElementById('cd-mins');
+        const secsEl = document.getElementById('cd-secs');
+        if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+        const diff = Math.max(0, targetWeddingDate - Date.now());
+        daysEl.textContent = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+        hoursEl.textContent = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+        minsEl.textContent = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+        secsEl.textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // =========================================================
+      // SAVE TO CALENDAR (.ICS DOWNLOAD)
+      // =========================================================
+      const downloadIcsBtn = document.getElementById('download-ics-btn');
+      if (downloadIcsBtn) {
+        downloadIcsBtn.addEventListener('click', () => {
+          const icsContent = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//Royal Banarasi Wedding//EN',
+            'BEGIN:VEVENT',
+            'DTSTART:20261212T133000Z',
+            'DTEND:20261212T213000Z',
+            `SUMMARY:Royal Wedding of ${state.bride} & ${state.groom}`,
+            'DESCRIPTION:With the blessings of Grandfather Shree Mangala Prasad Singh & Grandmother Smt. Jadavati Devi.',
+            'LOCATION:KPS Resort, Mangari, Babatpur, Varanasi, Uttar Pradesh',
+            'END:VEVENT',
+            'END:VCALENDAR'
+          ].join('\r\n');
+
+          const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = `${state.bride}-${state.groom}-Wedding.ics`;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url);
+        });
+      }
+
+      // =========================================================
+      // LIVE CUSTOMIZER MODAL CONTROLS
+      // =========================================================
+      const customizerModal = document.getElementById('customizer-modal');
+      const openCustomizerBtn = document.getElementById('open-customizer-btn');
+      const closeCustomizerBtn = document.getElementById('close-customizer-btn');
+      const saveCustomizerBtn = document.getElementById('save-customizer-btn');
+
+      openCustomizerBtn.addEventListener('click', () => {
+        customizerModal.classList.remove('hidden');
+        customizerModal.classList.add('flex');
+      });
+
+      closeCustomizerBtn.addEventListener('click', () => {
+        customizerModal.classList.add('hidden');
+        customizerModal.classList.remove('flex');
+      });
+
+      saveCustomizerBtn.addEventListener('click', () => {
+        state.bride = document.getElementById('edit-bride').value.trim() || 'Kajal';
+        state.groom = document.getElementById('edit-groom').value.trim() || 'Siddhant';
+        state.dateText = document.getElementById('edit-date').value.trim() || '12th December 2026';
+        state.elders = document.getElementById('edit-elders').value.trim() || state.elders;
+
+        document.getElementById('gate-monogram').textContent = `${state.bride[0]} & ${state.groom[0]}`;
+        document.getElementById('gate-couple-names').textContent = `${state.bride} & ${state.groom}`;
+        document.getElementById('hero-bride-name').textContent = state.bride;
+        document.getElementById('hero-groom-name').textContent = state.groom;
+        document.getElementById('hero-wedding-date').textContent = state.dateText;
+        document.getElementById('family-bride-name').textContent = state.bride;
+        document.getElementById('family-groom-name').textContent = state.groom;
+        document.getElementById('closing-elders-names').textContent = state.elders;
+
+        const whatsappBtn = document.getElementById('whatsapp-share-btn');
+        if (whatsappBtn) {
+          const msg = encodeURIComponent(`ॐ श्री गणेशाय नमः — You are cordially invited to the Royal Wedding of ${state.bride} & ${state.groom} on ${state.dateText} at KPS Resort, Mangari, Babatpur, Varanasi.`);
+          whatsappBtn.href = `https://wa.me/?text=${msg}`;
+        }
+
+        customizerModal.classList.add('hidden');
+        customizerModal.classList.remove('flex');
+      });
+    });
+  </script>
+</body>
+</html>
