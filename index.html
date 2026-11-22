@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kajal &amp; Siddhant — Wedding Celebrations Invitation</title>
-  <meta name="description" content="॥ श्री गणेशाय नमः ॥ You are cordially invited to the Wedding Celebrations of Kajal & Siddhant on 12th December 2026 at KPS Resort, Varanasi. Tap to open your invitation." />
+  <title>Kajal &amp; Siddhant — Wedding Invitation</title>
+  <meta name="description" content="12th December 2026 • KPS Resort, Varanasi" />
 
-  <!-- WhatsApp, Facebook & Social Link Preview Card (Open Graph) -->
-  <!-- WhatsApp, Facebook & Social Link Preview Card (Open Graph) -->
+  <!-- Clean Minimal Link Preview Card (Open Graph) -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Kajal &amp; Siddhant — Wedding Invitation" />
-  <meta property="og:title" content="॥ श्री गणेशाय नमः ॥" />
-  <meta property="og:description" content="Kajal &amp; Siddhant — Wedding Celebrations • 12th December 2026 at KPS Resort, Varanasi. Tap to open your invitation." />
+  <meta property="og:title" content="Kajal &amp; Siddhant — Wedding Invitation" />
+  <meta property="og:description" content="12th December 2026 • KPS Resort, Varanasi" />
   <meta property="og:image" content="https://theayush-191.github.io/WedIn/preview.jpg" />
   <meta property="og:image:secure_url" content="https://theayush-191.github.io/WedIn/preview.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -20,9 +18,10 @@
 
   <!-- Twitter / X Large Preview Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="॥ श्री गणेशाय नमः ॥" />
-  <meta name="twitter:description" content="Kajal &amp; Siddhant — Wedding Celebrations • 12th December 2026 at KPS Resort, Varanasi. Tap to open your invitation." />
+  <meta name="twitter:title" content="Kajal &amp; Siddhant — Wedding Invitation" />
+  <meta name="twitter:description" content="12th December 2026 • KPS Resort, Varanasi" />
   <meta name="twitter:image" content="https://theayush-191.github.io/WedIn/preview.jpg" />
+
   <!-- Google Fonts: Cinzel, Cormorant Garamond, Jost & Noto Serif Devanagari -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1031,7 +1030,7 @@
             KPS Resort
           </p>
           <p data-i18n="kpsCity" class="stagger-item stagger-4 text-xs text-royal-burgundy/85 mt-0.5">
-            Mangari, Babatpur, Varanasi, Uttar Pradesh
+            Mangari, Varanasi, Uttar Pradesh
           </p>
           <div class="stagger-item stagger-5 mt-5">
             <a
@@ -1146,7 +1145,7 @@
           </button>
           <a
             id="whatsapp-share-btn"
-            href="https://wa.me/?text=%E0%A5%90%20%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%97%E0%A4%A3%E0%A5%87%E0%A4%B6%E0%A4%BE%E0%A4%AF%20%E0%A4%A8%E0%A4%AE%E0%A4%83%20%E0%A5%A5%0AYou%20are%20cordially%20invited%20to%20the%20Wedding%20Celebrations%20of%20Kajal%20%26%20Siddhant%20on%2012th%20December%202026%20at%20KPS%20Resort%2C%20Varanasi.%0ATap%20to%20open%20your%20invitation"
+            href="https://wa.me/?text=https%3A%2F%2Ftheayush-191.github.io%2FWedIn%2F"
             target="_blank"
             rel="noopener noreferrer"
             class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-royal-crimson hover:bg-royal-red active:scale-95 text-gold-light border border-gold-champagne px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] shadow-md transition"
@@ -1165,17 +1164,11 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // =========================================================
-      // AUTO-ATTACH LIVE WEBSITE URL TO WHATSAPP SHARE BUTTON
+      // AUTO-ATTACH CLEAN LIVE URL TO WHATSAPP SHARE BUTTON
       // =========================================================
       const waShareBtn = document.getElementById('whatsapp-share-btn');
       if (waShareBtn) {
-        const shareText =
-          '॥ श्री गणेशाय नमः ॥\n' +
-          'Kajal & Siddhant — Wedding Celebrations\n' +
-          'You are cordially invited on *12th December 2026* at *KPS Resort, Varanasi*.\n' +
-          'Tap to open your invitation: ' +
-          window.location.href;
-        waShareBtn.href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
+        waShareBtn.href = 'https://wa.me/?text=' + encodeURIComponent(window.location.href);
       }
 
       // =========================================================
